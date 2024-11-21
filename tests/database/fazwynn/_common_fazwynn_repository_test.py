@@ -5,20 +5,20 @@ from datetime import timedelta
 from typing import TYPE_CHECKING, override
 from uuid import UUID
 
-from faz.fazbot.database.fazwynn.fazwynn_database import FazwynnDatabase
-from faz.fazbot.database.fazwynn.model.character_history import CharacterHistory
-from faz.fazbot.database.fazwynn.model.character_info import CharacterInfo
-from faz.fazbot.database.fazwynn.model.fazdb_uptime import FazdbUptime
-from faz.fazbot.database.fazwynn.model.guild_history import GuildHistory
-from faz.fazbot.database.fazwynn.model.guild_info import GuildInfo
-from faz.fazbot.database.fazwynn.model.guild_member_history import GuildMemberHistory
-from faz.fazbot.database.fazwynn.model.online_players import OnlinePlayers
-from faz.fazbot.database.fazwynn.model.player_activity_history import (
+from faz.bot.database.fazwynn.fazwynn_database import FazwynnDatabase
+from faz.bot.database.fazwynn.model.character_history import CharacterHistory
+from faz.bot.database.fazwynn.model.character_info import CharacterInfo
+from faz.bot.database.fazwynn.model.fazdb_uptime import FazdbUptime
+from faz.bot.database.fazwynn.model.guild_history import GuildHistory
+from faz.bot.database.fazwynn.model.guild_info import GuildInfo
+from faz.bot.database.fazwynn.model.guild_member_history import GuildMemberHistory
+from faz.bot.database.fazwynn.model.online_players import OnlinePlayers
+from faz.bot.database.fazwynn.model.player_activity_history import (
     PlayerActivityHistory,
 )
-from faz.fazbot.database.fazwynn.model.player_history import PlayerHistory
-from faz.fazbot.database.fazwynn.model.player_info import PlayerInfo
-from faz.fazbot.database.fazwynn.model.worlds import Worlds
+from faz.bot.database.fazwynn.model.player_history import PlayerHistory
+from faz.bot.database.fazwynn.model.player_info import PlayerInfo
+from faz.bot.database.fazwynn.model.worlds import Worlds
 from tests.database.common_db_repository_test import CommonDbRepositoryTest
 
 if TYPE_CHECKING:

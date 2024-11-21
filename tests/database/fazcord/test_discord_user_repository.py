@@ -1,6 +1,6 @@
 from typing import override
 
-from faz.fazbot.database.fazcord.repository.discord_user_repository import (
+from faz.bot.database.fazcord.repository.discord_user_repository import (
     DiscordUserRepository,
 )
 from tests.database.fazcord._common_fazcord_repository_test import (

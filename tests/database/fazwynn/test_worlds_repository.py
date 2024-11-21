@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import override
 
-from faz.fazbot.database.fazwynn.repository.worlds_repository import WorldsRepository
+from faz.bot.database.fazwynn.repository.worlds_repository import WorldsRepository
 from tests.database.fazwynn._common_fazwynn_repository_test import (
     CommonFazwynnRepositoryTest,
 )

@@ -1,7 +1,7 @@
 from decimal import Decimal
 from unittest import TestCase
 
-from faz.fazbot.wynn.util.ingredient_drop_probability import IngredientDropProbability
+from faz.bot.wynn.util.ingredient_drop_probability import IngredientDropProbability
 
 
 class TestIngredientUtil(TestCase):

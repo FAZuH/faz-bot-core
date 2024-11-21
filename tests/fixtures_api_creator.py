@@ -3,10 +3,10 @@ import json
 
 from loguru import logger
 
-from faz.fazbot.wynn.api.response.guild_response import GuildResponse
-from faz.fazbot.wynn.api.response.online_players_response import OnlinePlayersResponse
-from faz.fazbot.wynn.api.response.player_response import PlayerResponse
-from faz.fazbot.wynn.api.wynn_api import WynnApi
+from faz.bot.wynn.api.response.guild_response import GuildResponse
+from faz.bot.wynn.api.response.online_players_response import OnlinePlayersResponse
+from faz.bot.wynn.api.response.player_response import PlayerResponse
+from faz.bot.wynn.api.wynn_api import WynnApi
 
 
 class FixturesApiCreator:

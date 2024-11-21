@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import override
 
-from faz.fazbot.database.fazwynn.repository.player_activity_history_repository import (
+from faz.bot.database.fazwynn.repository.player_activity_history_repository import (
     PlayerActivityHistoryRepository,
 )
 from tests.database.fazwynn._common_fazwynn_repository_test import (

@@ -3,7 +3,7 @@ from typing import override
 
 import pandas
 
-from faz.fazbot.database.fazwynn.repository.player_history_repository import (
+from faz.bot.database.fazwynn.repository.player_history_repository import (
     PlayerHistoryRepository,
 )
 from tests.database.fazwynn._common_fazwynn_repository_test import (

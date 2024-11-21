@@ -3,13 +3,13 @@ from datetime import datetime as dt
 from types import NoneType
 from typing import override
 
-from faz.fazbot.wynn.api.model.field.body_date_field import BodyDateField
-from faz.fazbot.wynn.api.model.field.character_type_field import CharacterTypeField
-from faz.fazbot.wynn.api.model.field.gamemode_field import GamemodeField
-from faz.fazbot.wynn.api.model.field.username_or_uuid_field import UsernameOrUuidField
-from faz.fazbot.wynn.api.model.field.uuid_field import UuidField
-from faz.fazbot.wynn.api.model.guild import Guild
-from faz.fazbot.wynn.api.model.player import Player
+from faz.bot.wynn.api.model.field.body_date_field import BodyDateField
+from faz.bot.wynn.api.model.field.character_type_field import CharacterTypeField
+from faz.bot.wynn.api.model.field.gamemode_field import GamemodeField
+from faz.bot.wynn.api.model.field.username_or_uuid_field import UsernameOrUuidField
+from faz.bot.wynn.api.model.field.uuid_field import UuidField
+from faz.bot.wynn.api.model.guild import Guild
+from faz.bot.wynn.api.model.player import Player
 from tests.fixtures_api import FixturesApi
 
 

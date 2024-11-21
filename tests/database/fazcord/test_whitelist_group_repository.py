@@ -1,6 +1,6 @@
 from typing import override
 
-from faz.fazbot.database.fazcord.repository.whitelist_group_repository import (
+from faz.bot.database.fazcord.repository.whitelist_group_repository import (
     WhitelistGroupRepository,
 )
 from tests.database.fazcord._common_fazcord_repository_test import (

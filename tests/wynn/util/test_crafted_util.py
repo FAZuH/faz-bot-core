@@ -1,8 +1,8 @@
 from decimal import Decimal
 from unittest import TestCase
 
-from faz.fazbot.wynn.util.crafted_roll_probability import CraftedRollProbability
-from faz.fazbot.wynn.util.ingredient_field import IngredientField
+from faz.bot.wynn.util.crafted_roll_probability import CraftedRollProbability
+from faz.bot.wynn.util.ingredient_field import IngredientField
 
 
 class TestCraftedUtil(TestCase):

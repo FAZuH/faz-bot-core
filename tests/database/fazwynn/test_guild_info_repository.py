@@ -4,7 +4,7 @@ from datetime import timedelta
 from typing import TYPE_CHECKING, override
 from uuid import UUID
 
-from faz.fazbot.database.fazwynn.repository.guild_info_repository import (
+from faz.bot.database.fazwynn.repository.guild_info_repository import (
     GuildInfoRepository,
 )
 from tests.database.fazwynn._common_fazwynn_repository_test import (
@@ -12,7 +12,7 @@ from tests.database.fazwynn._common_fazwynn_repository_test import (
 )
 
 if TYPE_CHECKING:
-    from faz.fazbot.database.fazwynn.model.guild_history import GuildHistory
+    from faz.bot.database.fazwynn.model.guild_history import GuildHistory
 
 
 class TestGuildInfoRepository(CommonFazwynnRepositoryTest.Test[GuildInfoRepository]):

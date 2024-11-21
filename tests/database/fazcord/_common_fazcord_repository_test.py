@@ -3,7 +3,7 @@ from __future__ import annotations
 from abc import ABC
 from typing import TYPE_CHECKING, override
 
-from faz.fazbot.database.fazcord.fazcord_database import FazcordDatabase
+from faz.bot.database.fazcord.fazcord_database import FazcordDatabase
 from tests.database.common_db_repository_test import CommonDbRepositoryTest
 
 if TYPE_CHECKING:

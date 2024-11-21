@@ -2,7 +2,7 @@ import unittest
 from datetime import datetime
 from typing import override
 
-from faz.fazbot.wynn.api.wynn_api import WynnApi
+from faz.bot.wynn.api.wynn_api import WynnApi
 
 
 class TestApiEndpoint(unittest.IsolatedAsyncioTestCase):

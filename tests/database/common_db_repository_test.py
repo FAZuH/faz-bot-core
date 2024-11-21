@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any, override
 from sqlalchemy import inspect
 
 from faz.utils.database.base_model import BaseModel
-from faz.fazbot.properties import Properties
+from faz.bot.properties import Properties
 
 if TYPE_CHECKING:
     from sqlalchemy import Connection
