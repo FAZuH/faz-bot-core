@@ -42,6 +42,7 @@ jobs:
           github-token: ${{ secrets.PRIVATE_TOKEN }}
           git-user-name: "FAZuH-bot"
           git-user-email: "fazuhhh@proton.me"
+          pre-commit: ./.github/.pre-commit.js
           version-file: ./version.json
           skip-version-file: true
           skip-git-pull: true
