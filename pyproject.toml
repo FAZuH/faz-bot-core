@@ -12,12 +12,15 @@ authors = [
 ]
 dependencies = [
  "aiohttp>=3.11.7",
+ "aiomysql>=0.2.0",
  "faz-utils",
+ "greenlet>=3.1.1",
  "loguru>=0.7.2",
  "nextcord>=2.6.0",
  "numpy>=2.1.3",
  "pandas>=2.2.3",
  "python-dotenv>=1.0.1",
+ "sortedcontainers>=2.4.0",
  "sqlalchemy>=2.0.36",
 ]
 
@@ -34,16 +37,12 @@ dev = [
 ]
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
 
-[tool.hatch.build.targets.wheel]
-only-packages = true
-packages = ["src/faz", "tests"]
-
-[tool.black]
-line-length = 88
-target-version = ""
+[tool.setuptools.packages.find]
+where = ["src", "tests"]
+include = ["faz.bot"]
 
 [tool.ruff]
 exclude = [
@@ -74,9 +73,9 @@ exclude = [
     "site-packages",
     "venv",
 ]
-line-length = 88
+line-length = 100
 indent-width = 4
-target-version = ""
+target-version = "py313"
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F"]
