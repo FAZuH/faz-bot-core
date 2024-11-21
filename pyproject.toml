@@ -13,7 +13,7 @@ authors = [
 dependencies = [
  "aiohttp>=3.11.7",
  "aiomysql>=0.2.0",
- "faz-utils",
+ "faz-utils>=0.1.1",
  "greenlet>=3.1.1",
  "loguru>=0.7.2",
  "nextcord>=2.6.0",
@@ -42,7 +42,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src", "tests"]
-include = ["faz.bot"]
 
 [tool.ruff]
 exclude = [
@@ -91,6 +90,3 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 docstring-code-format = false
 docstring-code-line-length = "dynamic"
-
-[tool.uv.sources]
-faz-utils = { git = "https://github.com/FAZuH/faz-utils", rev = "v0.1.0" }

@@ -12,14 +12,12 @@ def test_source_path():
 def test_faz_utils_path():
     """Test if the faz.utils path is configured correctly."""
     from faz.utils.cache_util import CacheUtil
+    from faz.utils.database.base_database import BaseDatabase
+    from faz.utils.heartbeat.task.itask import ITask
 
-    cache = CacheUtil()
-
-    @cache.decorator
-    def foo():
-        return "bar"
-
-    assert foo() == "bar"
+    assert CacheUtil
+    assert BaseDatabase
+    assert ITask
 
 
 def test_tests_path():
