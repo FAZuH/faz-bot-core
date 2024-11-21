@@ -1,4 +1,4 @@
-# faz-utils
+# faz-bot-core
 
 -----
 
@@ -10,9 +10,9 @@
 ## Installation
 
 ```console
-pip install faz-utils
+pip install faz-bot-core
 ```
 
 ## License
 
-`faz-utils` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`faz-bot-core` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
