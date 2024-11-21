@@ -129,6 +129,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "aiohttp" },
+    { name = "faz-utils" },
     { name = "loguru" },
     { name = "nextcord" },
     { name = "numpy" },
@@ -147,6 +148,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "aiohttp", specifier = ">=3.11.7" },
+    { name = "faz-utils", git = "https://github.com/FAZuH/faz-utils?rev=v0.1.0" },
     { name = "loguru", specifier = ">=0.7.2" },
     { name = "nextcord", specifier = ">=2.6.0" },
     { name = "numpy", specifier = ">=2.1.3" },
@@ -160,6 +162,15 @@ dev = [
     { name = "black", specifier = ">=24.10.0" },
     { name = "pytest", specifier = ">=8.3.3" },
     { name = "ruff", specifier = ">=0.7.4" },
+]
+
+[[package]]
+name = "faz-utils"
+version = "0.1.0"
+source = { git = "https://github.com/FAZuH/faz-utils?rev=v0.1.0#a3f081f729bde9db2d0d1ab91393a771019530a9" }
+dependencies = [
+    { name = "loguru" },
+    { name = "sqlalchemy" },
 ]
 
 [[package]]
