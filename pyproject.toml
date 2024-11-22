@@ -41,7 +41,14 @@ requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-where = ["src", "tests"]
+where = ["src"]
+include = [ "faz.bot*" ]
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
 
 [tool.ruff]
 exclude = [
