@@ -9,6 +9,7 @@ def test_source_path():
 
     assert emerald.emeralds == 1
 
+
 def test_faz_utils_path():
     """Test if the faz.utils path is configured correctly."""
     from faz.utils.cache_util import CacheUtil
