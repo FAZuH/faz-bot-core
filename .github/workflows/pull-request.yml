@@ -27,6 +27,21 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Stop Default MySQL Server (if any)
+        run: sudo service mysql stop
+
+      - name: Set Up MariaDB
+        run: |
+          docker run \
+          --name mysql \
+          -e MYSQL_ROOT_PASSWORD=password \
+          -e MYSQL_USER=faz \
+          -e MYSQL_PASSWORD=password \
+          -e MYSQL_FAZCORD_DATABASE=faz-cord_test \
+          -e MYSQL_FAZWYNN_DATABASE=faz-wynn_test \
+          -v ${GITHUB_WORKSPACE}/mysql/init:/docker-entrypoint-initdb.d \
+          -d -p "3306:3306" mariadb:11.4.2
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -48,4 +63,12 @@ jobs:
           commit_message: "ci: ruff and black formatting"
 
       - name: Run Tests
+        env:
+          # Note: Test append the _test suffix to the database names
+          MYSQL_HOST: localhost
+          MYSQL_PORT: 3306
+          MYSQL_USER: faz
+          MYSQL_PASSWORD: password
+          MYSQL_FAZCORD_DATABASE: faz-cord
+          MYSQL_FAZWYNN_DATABASE: faz-wynn
         run: uv run pytest --cache-clear tests/
