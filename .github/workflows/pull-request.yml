@@ -71,4 +71,7 @@ jobs:
           MYSQL_PASSWORD: password
           MYSQL_FAZCORD_DATABASE: faz-cord
           MYSQL_FAZWYNN_DATABASE: faz-wynn
-        run: uv run pytest --cache-clear tests/
+        run: |
+          cp .env.example .env
+          uv run scripts/initdb.sh
+          uv run pytest
