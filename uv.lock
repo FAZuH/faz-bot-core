@@ -179,7 +179,7 @@ dev = [
 requires-dist = [
     { name = "aiohttp", specifier = ">=3.11.7" },
     { name = "aiomysql", specifier = ">=0.2.0" },
-    { name = "faz-utils", specifier = ">=0.1.1" },
+    { name = "faz-utils", specifier = ">=0.1.2" },
     { name = "greenlet", specifier = ">=3.1.1" },
     { name = "loguru", specifier = ">=0.7.2" },
     { name = "nextcord", specifier = ">=2.6.0" },
@@ -200,15 +200,15 @@ dev = [
 
 [[package]]
 name = "faz-utils"
-version = "0.1.1"
+version = "0.1.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "loguru" },
     { name = "sqlalchemy" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b3/02/8d852c84fc11172903e550f443a15065f2f6c9653d66e8c23292e55d0194/faz_utils-0.1.1.tar.gz", hash = "sha256:c76bb17ed55778a543ea9d6e77018147485a35ab1db3edf7a77333b2566f3bbc", size = 9289 }
+sdist = { url = "https://files.pythonhosted.org/packages/84/20/9e5af2d3666d9d8d000ce7c4dcda919e6f9129a305bd601b81b1b4b1e335/faz_utils-0.1.2.tar.gz", hash = "sha256:cfb3929c5120113d55e37409904738f54036f4d737abf91e552478ba90e90ee9", size = 10199 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1d/36/d6fedc3ba726e49da7b5191907a784e3227a4dfb0a24114a0de269358440/faz_utils-0.1.1-py3-none-any.whl", hash = "sha256:05a91c0d2f01b9cfdf4c4bbb661f1bed307025f4b6e1ae4d6a2a3b6115ecfca7", size = 12282 },
+    { url = "https://files.pythonhosted.org/packages/58/c6/3bb0aeb11727b21e1a41f3bbfff17961031e201e9d6f298a96e1737de060/faz_utils-0.1.2-py3-none-any.whl", hash = "sha256:0a7ea42e5f7f76c70a6786b4d8bc7959d43c5701bd11a735087bde746c605be6", size = 11922 },
 ]
 
 [[package]]
