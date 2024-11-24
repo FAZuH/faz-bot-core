@@ -22,6 +22,16 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
+      - name: Stop Default MySQL Server (if any)
+        run: sudo service mysql stop
+
+      - name: Set Up MariaDB
+        run: |
+          docker run \
+          --name mysql \
+          -e MYSQL_ROOT_PASSWORD=password \
+          -d -p "3306:3306" mariadb:11.4.2
+
       - name: Install uv
         uses: astral-sh/setup-uv@v3
         with:
@@ -47,5 +57,25 @@ jobs:
           commit_user_email: "fazuhhh@proton.me"
           commit_message: "ci: ruff and black formatting"
 
+      - name: Wait for MariaDB
+        run: |
+          echo "Check DB"
+          while ! mysqladmin ping -h localhost -u root -ppassword -P 3306; do
+              echo "Wait ..."
+              sleep 1
+          done
+          echo "DB ready!"
+
       - name: Run Tests
-        run: uv run pytest --cache-clear tests/
+        env:
+          # Note: Test append the _test suffix to the database names
+          MYSQL_HOST: localhost
+          MYSQL_PORT: 3306
+          MYSQL_USER: faz
+          MYSQL_PASSWORD: password
+          MYSQL_FAZCORD_DATABASE: faz-cord
+          MYSQL_FAZWYNN_DATABASE: faz-wynn
+        run: |
+          cp .env-example .env
+          uv run scripts/initdb.py
+          uv run pytest

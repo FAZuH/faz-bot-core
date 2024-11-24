@@ -2,7 +2,11 @@
 name = "faz-bot-core"
 # On the release branches, this string will be automatically updated by the bots
 # Do not change this in the main branch!
+
+
 version = "0.1.3"
+
+
 description = "Core logic used by the other faz-bot components."
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -13,7 +17,7 @@ authors = [
 dependencies = [
  "aiohttp>=3.11.7",
  "aiomysql>=0.2.0",
- "faz-utils>=0.1.1",
+ "faz-utils>=0.1.2",
  "greenlet>=3.1.1",
  "loguru>=0.7.2",
  "nextcord>=2.6.0",
@@ -31,6 +35,7 @@ Documentation = "https://github.com/FAZuH/faz-bot-core#readme"
 
 [dependency-groups]
 dev = [
+    "alembic>=1.14.0",
     "black>=24.10.0",
     "pytest>=8.3.3",
     "ruff>=0.7.4",
@@ -41,7 +46,18 @@ requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-where = ["src", "tests"]
+where = ["src"]
+include = [ 
+    "faz.bot.core*",
+    "faz.bot.database*",
+    "faz.bot.wynn*",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
 
 [tool.ruff]
 exclude = [
