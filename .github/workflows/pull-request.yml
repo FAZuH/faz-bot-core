@@ -72,6 +72,6 @@ jobs:
           MYSQL_FAZCORD_DATABASE: faz-cord
           MYSQL_FAZWYNN_DATABASE: faz-wynn
         run: |
-          cp .env.example .env
-          uv run scripts/initdb.sh
+          cp .env-example .env
+          uv run scripts/initdb.py
           uv run pytest
