@@ -3,6 +3,7 @@ from datetime import datetime as dt
 from types import NoneType
 from typing import override
 
+from faz.bot.dev.test.fixtures_api import FixturesApi
 from faz.bot.wynn.api.model.field.body_date_field import BodyDateField
 from faz.bot.wynn.api.model.field.character_type_field import CharacterTypeField
 from faz.bot.wynn.api.model.field.gamemode_field import GamemodeField
@@ -10,7 +11,6 @@ from faz.bot.wynn.api.model.field.username_or_uuid_field import UsernameOrUuidFi
 from faz.bot.wynn.api.model.field.uuid_field import UuidField
 from faz.bot.wynn.api.model.guild import Guild
 from faz.bot.wynn.api.model.player import Player
-from tests.fixtures_api import FixturesApi
 
 
 class TestApiModelFromFixture(unittest.TestCase):
