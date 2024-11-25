@@ -50,6 +50,7 @@ where = ["src"]
 include = [ 
     "faz.bot.core*",
     "faz.bot.database*",
+    "faz.bot.dev*",
     "faz.bot.wynn*",
 ]
 

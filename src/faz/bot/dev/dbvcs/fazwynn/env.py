@@ -1,7 +1,8 @@
 # Necessary to load the models
 from typing import override
 
-from scripts.dbvcs.base_env import BaseEnv
+from faz.bot.dev.dbvcs.base_env import BaseEnv
+
 from sqlalchemy import MetaData
 
 from faz.bot.database.fazwynn.fazwynn_database import FazwynnDatabase
