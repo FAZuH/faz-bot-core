@@ -7,12 +7,12 @@ from faz.bot.wynn.api.response.guild_response import GuildResponse
 from faz.bot.wynn.api.response.online_players_response import OnlinePlayersResponse
 from faz.bot.wynn.api.response.player_response import PlayerResponse
 from faz.bot.wynn.api.wynn_api import WynnApi
+from os.path import join, dirname
+
+from faz.bot.dev.test._base_wynn_fixtures_api import BaseWynnFixturesApi
 
 
-class FixturesApiCreator:
-    _ONLINE_PLAYERS_FIXTURE_FP = "tests/_fixtures/online_players.json"
-    _PLAYERS_FIXTURE_FP = "tests/_fixtures/players.json"
-    _GUILDS_FIXTURE_FP = "tests/_fixtures/guilds.json"
+class FixturesApiCreator(BaseWynnFixturesApi):
 
     def __init__(self) -> None:
         self._api = WynnApi()
@@ -23,27 +23,27 @@ class FixturesApiCreator:
 
         uuids = await self._api.player.get_online_uuids()
         assert uuids
-        with open(self._ONLINE_PLAYERS_FIXTURE_FP, "w") as f:
+        with open(self._ONLINE_PLAYERS_DATASET, "w") as f:
             json.dump({0: [uuids.body.raw, uuids.headers.raw]}, f, indent=4)
-        logger.info(f"Saved fixture (file: {self._ONLINE_PLAYERS_FIXTURE_FP})")
+        logger.info(f"Saved fixture (file: {self._ONLINE_PLAYERS_DATASET})")
 
         players = await self._get_online_player_stats(uuids)
         logger.info(f"Fetched stats for {len(players)} players.")
         to_dump1 = {
             i: [resp.body.raw, resp.headers.raw] for i, resp in enumerate(players)
         }
-        with open(self._PLAYERS_FIXTURE_FP, "w") as f:
+        with open(self._PLAYERS_DATASET, "w") as f:
             json.dump(to_dump1, f, indent=4)
-        logger.info(f"Saved fixture (file: {self._PLAYERS_FIXTURE_FP})")
+        logger.info(f"Saved fixture (file: {self._PLAYERS_DATASET})")
 
         guilds = await self._get_online_guild_stats(players)
         logger.info(f"Fetched stats for {len(guilds)} guilds.")
         to_dump2 = {
             i: [resp.body.raw, resp.headers.raw] for i, resp in enumerate(guilds)
         }
-        with open(self._GUILDS_FIXTURE_FP, "w") as f:
+        with open(self._GUILDS_DATASET, "w") as f:
             json.dump(to_dump2, f, indent=4)
-        logger.info(f"Saved fixture (file: {self._GUILDS_FIXTURE_FP})")
+        logger.info(f"Saved fixture (file: {self._GUILDS_DATASET})")
 
         logger.success("Fixture data creation completed.")
         await self._api.close()
