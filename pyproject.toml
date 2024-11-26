@@ -4,7 +4,7 @@ name = "faz-bot-core"
 # Do not change this in the main branch!
 
 
-version = "0.1.5"
+version = "0.2.0"
 
 
 description = "Core logic used by the other faz-bot components."
