@@ -1,58 +1,52 @@
-import io
 import os
 from abc import ABC, abstractmethod
 from typing import override
 from unittest import TestCase
+from unittest.mock import MagicMock
 
 from alembic import command
-from alembic.config import Config
 from alembic.environment import EnvironmentContext
 from alembic.script.base import ScriptDirectory
 from sqlalchemy import engine_from_config, text
-from os.path import join, dirname
+
+from faz.bot.dev.scripts.dbvcs.alembic_config import AlembicConfig
 
 
 class CommonMigrationTest:
+
     class Test(TestCase, ABC):
 
         @override
         def setUp(self) -> None:
-            self._output_buffer = io.StringIO()
-            alembic_ini_path = join(
-                dirname(dirname(dirname(__file__))), "src/faz/bot/dev/dbvcs/alembic.ini"
-            )
-            print(alembic_ini_path)
-            self.alembic_cfg = Config(
-                alembic_ini_path, self.db_name, stdout=self._output_buffer
-            )
+            self.config = AlembicConfig(self.section_name)
+            self.mock_stdout = self.config.print_stdout = MagicMock()
 
-            self.__drop_all()
-            command.ensure_version(self.alembic_cfg)
-            command.stamp(self.alembic_cfg, "base")
+            self._setup_test_dburl()
+            self._drop_all()
+
+            command.ensure_version(self.config)
+            command.stamp(self.config, "base")
 
         def test_upgrade(self):
             # Act
-            command.upgrade(self.alembic_cfg, self.target_version)
+            command.upgrade(self.config, self.target_version)
 
             # Assert
-            command.current(self.alembic_cfg)
+            command.current(self.config)
 
-            output = self._output_buffer.getvalue()
+            output = self.mock_stdout.call_args_list[-1].args[0]
             self.assertIn(self.target_version, output)
 
         def test_downgrade(self):
             # Prepare
-            command.upgrade(self.alembic_cfg, self.target_version)
+            command.upgrade(self.config, self.target_version)
 
             # Act
-            command.downgrade(self.alembic_cfg, "base")
+            command.downgrade(self.config, "base")
 
-            output = self._output_buffer.getvalue()
-            self.assertEqual(output, "")
-
-        @override
-        def tearDown(self) -> None:
-            command.downgrade(self.alembic_cfg, "base")
+            # Assert
+            command.current(self.config)
+            self.mock_stdout.assert_not_called()
 
         # def _populate_db(self) -> None:
         #     test = CommonFazdbRepositoryTest.Test
@@ -73,35 +67,26 @@ class CommonMigrationTest:
         #         for mock in mocks:
         #             ses.add_all([mock[0], mock[2]])
 
-        @property
-        def start_version(self) -> str:
-            return "base"
-
-        def __get_url(self):
+        def _setup_test_dburl(self) -> None:
             """Override sqlalchemy.url with environment variables if set"""
             user = os.getenv("MYSQL_USER", None)
             password = os.getenv("MYSQL_PASSWORD", None)
             host = os.getenv("MYSQL_HOST", None)
-            db_name = self.db_name
-
-            section = self.alembic_cfg.get_section(self.alembic_cfg.config_ini_section)
-            assert section is not None
+            db_name = self.section_name
 
             if None in {user, password, host}:
-                return section["sqlalchemy.url"]
+                return
 
-            return f"mysql+pymysql://{user}:{password}@{host}/{db_name}"
+            self.section["sqlalchemy.url"] = (
+                f"mysql+pymysql://{user}:{password}@{host}/{db_name}"
+            )
 
-        def __drop_all(self):
-            section = self.alembic_cfg.get_section(self.alembic_cfg.config_ini_section)
-            assert section
-            section["sqlalchemy.url"] = self.__get_url()
-
-            engine = engine_from_config(section, prefix="sqlalchemy.")
+        def _drop_all(self):
+            engine = engine_from_config(self.section, prefix="sqlalchemy.")
             with engine.connect() as conn:
                 # Get environment context
                 env = EnvironmentContext(
-                    self.alembic_cfg, ScriptDirectory.from_config(self.alembic_cfg)
+                    self.config, ScriptDirectory.from_config(self.config)
                 )
                 env.configure(conn)
 
@@ -131,11 +116,21 @@ class CommonMigrationTest:
                     conn.execute(text("SET FOREIGN_KEY_CHECKS=1"))
 
         @property
+        def section(self) -> dict[str, str]:
+            ret = self.config.get_section(self.section_name)
+            assert ret is not None
+            return ret
+
+        @property
+        def start_version(self) -> str:
+            return "base"
+
+        @property
         @abstractmethod
         def target_version(self) -> str: ...
 
         @property
         @abstractmethod
-        def db_name(self) -> str:
+        def section_name(self) -> str:
             """Database name to test."""
             ...

@@ -8,5 +8,5 @@ class CommonFazdbMigrationTest:
 
         @property
         @override
-        def db_name(self) -> str:
+        def section_name(self) -> str:
             return "faz-wynn_test"

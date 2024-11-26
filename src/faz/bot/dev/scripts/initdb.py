@@ -143,7 +143,7 @@ def init_db(name: str) -> None:
         for command in (("ensure_version",), ("upgrade", "head")):
             try:
                 subprocess.run(
-                    ["uv", "run", "python", "-m", "alembic", "-n", db_name, *command],
+                    ["uv", "run", "faz-alembic", "-n", db_name, *command],
                     check=True,
                     capture_output=True,
                     text=True,

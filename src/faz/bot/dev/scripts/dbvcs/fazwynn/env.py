@@ -1,12 +1,11 @@
 # Necessary to load the models
 from typing import override
 
-from faz.bot.dev.dbvcs.base_env import BaseEnv
-
 from sqlalchemy import MetaData
 
 from faz.bot.database.fazwynn.fazwynn_database import FazwynnDatabase
 from faz.bot.database.fazwynn.model.base_fazwynn_model import BaseFazwynnModel
+from faz.bot.dev.scripts.dbvcs.base_env import BaseEnv
 
 FazwynnDatabase  # type: ignore prevent being removed by linter
 

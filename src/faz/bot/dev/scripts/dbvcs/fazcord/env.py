@@ -1,14 +1,13 @@
 # Necessary to load the models
 from typing import override
 
-from faz.bot.dev.dbvcs.base_env import BaseEnv
-
 from sqlalchemy import MetaData
 
 from faz.bot.database.fazcord.fazcord_database import FazcordDatabase
 from faz.bot.database.fazcord.model.base_fazcord_model import BaseFazcordModel
+from faz.bot.dev.scripts.dbvcs.base_env import BaseEnv
 
-FazcordDatabase  # type: ignore prevent being removed by linter lol
+FazcordDatabase  # type: ignore prevent being removed by linter
 
 
 class FazcordEnv(BaseEnv):

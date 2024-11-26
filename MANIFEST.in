@@ -1,4 +1,3 @@
-include src/faz/bot/dev/dbvcs/alembic.ini
 include src/faz/bot/dev/test/dataset/*
 include src/faz/bot/dev/scripts/*
 exclude tests/*
