@@ -126,14 +126,13 @@ def grant_privileges() -> None:
     run_sql("FLUSH PRIVILEGES;")
 
 
-# def check_alembic(python_bin: str) -> None:
-#     """Check if alembic is installed."""
-#     try:
-#         subprocess.run([python_bin, "-c", "import alembic"],
-#                       check=True, capture_output=True)
-#     except subprocess.CalledProcessError:
-#         print("Error: alembic Python module not found. Install it with 'pip install alembic'")
-#         sys.exit(1)
+def check_uv() -> None:
+    """Check if uv is installed."""
+    try:
+        subprocess.run(["uv", "--help"], check=True, capture_output=True)
+    except subprocess.CalledProcessError:
+        print("Error: uv command not found.")
+        sys.exit(1)
 
 
 def init_db(name: str) -> None:
@@ -165,7 +164,7 @@ def main() -> None:
     try:
         load_env()
         check_env()
-        # check_alembic()
+        check_uv()
 
         print("Starting database setup...")
         create_user()
