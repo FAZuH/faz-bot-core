@@ -30,7 +30,7 @@ dependencies = [
 
 [project.scripts]
 faz-alembic = "faz.bot.dev.scripts.faz_alembic:main"
-initdb = "faz.bot.dev.scripts.initdb:main"
+faz-initdb = "faz.bot.dev.scripts.initdb:main"
 
 [project.urls]
 Source = "https://github.com/FAZuH/faz-bot-core"
@@ -51,12 +51,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = [ 
-    "faz.bot.core*",
-    "faz.bot.database*",
-    "faz.bot.dev*",
-    "faz.bot.wynn*",
-]
+include = [ "faz.bot*" ]
 
 [tool.pytest.ini_options]
 addopts = "-ra -q"
