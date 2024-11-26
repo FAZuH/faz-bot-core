@@ -1,6 +1,9 @@
 # /// script
 # requires-python = ">=3.13"
-# dependencies = []
+# dependencies = [
+#   "alembic>=1.14.0",
+#   "sqlalchemy>=2.0.36",
+# ]
 # ///
 
 from typing import Optional, Sequence
