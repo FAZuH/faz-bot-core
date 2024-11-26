@@ -28,6 +28,10 @@ dependencies = [
  "sqlalchemy>=2.0.36",
 ]
 
+[project.scripts]
+faz-alembic = "faz.bot.dev.scripts.faz_alembic:main"
+initdb = "faz.bot.dev.scripts.initdb:main"
+
 [project.urls]
 Source = "https://github.com/FAZuH/faz-bot-core"
 Issues = "https://github.com/FAZuH/faz-bot-core/issues"
