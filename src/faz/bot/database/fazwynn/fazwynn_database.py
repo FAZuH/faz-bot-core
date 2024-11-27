@@ -1,38 +1,25 @@
 from typing import override
 
+from faz.utils.database.base_mysql_database import BaseMySQLDatabase
+
 from faz.bot.database.fazwynn.model.base_fazwynn_model import BaseFazwynnModel
 from faz.bot.database.fazwynn.repository.character_history_repository import (
     CharacterHistoryRepository,
 )
-from faz.bot.database.fazwynn.repository.character_info_repository import (
-    CharacterInfoRepository,
-)
-from faz.bot.database.fazwynn.repository.fazdb_uptime_repository import (
-    FazdbUptimeRepository,
-)
-from faz.bot.database.fazwynn.repository.guild_history_repository import (
-    GuildHistoryRepository,
-)
-from faz.bot.database.fazwynn.repository.guild_info_repository import (
-    GuildInfoRepository,
-)
+from faz.bot.database.fazwynn.repository.character_info_repository import CharacterInfoRepository
+from faz.bot.database.fazwynn.repository.fazdb_uptime_repository import FazdbUptimeRepository
+from faz.bot.database.fazwynn.repository.guild_history_repository import GuildHistoryRepository
+from faz.bot.database.fazwynn.repository.guild_info_repository import GuildInfoRepository
 from faz.bot.database.fazwynn.repository.guild_member_history_repository import (
     GuildMemberHistoryRepository,
 )
-from faz.bot.database.fazwynn.repository.online_players_repository import (
-    OnlinePlayersRepository,
-)
+from faz.bot.database.fazwynn.repository.online_players_repository import OnlinePlayersRepository
 from faz.bot.database.fazwynn.repository.player_activity_history_repository import (
     PlayerActivityHistoryRepository,
 )
-from faz.bot.database.fazwynn.repository.player_history_repository import (
-    PlayerHistoryRepository,
-)
-from faz.bot.database.fazwynn.repository.player_info_repository import (
-    PlayerInfoRepository,
-)
+from faz.bot.database.fazwynn.repository.player_history_repository import PlayerHistoryRepository
+from faz.bot.database.fazwynn.repository.player_info_repository import PlayerInfoRepository
 from faz.bot.database.fazwynn.repository.worlds_repository import WorldsRepository
-from faz.utils.database.base_mysql_database import BaseMySQLDatabase
 
 
 class FazwynnDatabase(BaseMySQLDatabase):

@@ -1,8 +1,6 @@
 from typing import override
 
-from tests.dbvcs.fazcord._common_fazcord_migration_test import (
-    CommonFazcordMigrationTest,
-)
+from tests.dbvcs.fazcord._common_fazcord_migration_test import CommonFazcordMigrationTest
 
 
 class Test_1_0_0(CommonFazcordMigrationTest.Test):

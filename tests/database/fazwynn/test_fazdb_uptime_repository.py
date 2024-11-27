@@ -1,11 +1,7 @@
 from typing import override
 
-from faz.bot.database.fazwynn.repository.fazdb_uptime_repository import (
-    FazdbUptimeRepository,
-)
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from faz.bot.database.fazwynn.repository.fazdb_uptime_repository import FazdbUptimeRepository
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
 class TestFazdbUptimeRepository(CommonFazwynnRepositoryTest.Test[FazdbUptimeRepository]):

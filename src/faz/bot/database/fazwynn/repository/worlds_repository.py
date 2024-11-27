@@ -2,15 +2,14 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any, Iterable, Literal, Sequence
 
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import desc, select
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.worlds import Worlds
 
 if TYPE_CHECKING:
-    from sqlalchemy.ext.asyncio import AsyncSession
-
     from faz.utils.database.base_mysql_database import BaseMySQLDatabase
+    from sqlalchemy.ext.asyncio import AsyncSession
 
 
 class WorldsRepository(BaseRepository[Worlds, Any]):

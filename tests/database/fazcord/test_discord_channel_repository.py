@@ -1,11 +1,7 @@
 from typing import override
 
-from faz.bot.database.fazcord.repository.discord_channel_repository import (
-    DiscordChannelRepository,
-)
-from tests.database.fazcord._common_fazcord_repository_test import (
-    CommonFazcordRepositoryTest,
-)
+from faz.bot.database.fazcord.repository.discord_channel_repository import DiscordChannelRepository
+from tests.database.fazcord._common_fazcord_repository_test import CommonFazcordRepositoryTest
 
 
 class TestDiscordChannelRepository(CommonFazcordRepositoryTest.Test[DiscordChannelRepository]):

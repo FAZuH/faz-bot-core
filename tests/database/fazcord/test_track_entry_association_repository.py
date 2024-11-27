@@ -3,9 +3,7 @@ from typing import override
 from faz.bot.database.fazcord.repository.track_entry_association_repository import (
     TrackEntryAssociationRepository,
 )
-from tests.database.fazcord._common_fazcord_repository_test import (
-    CommonFazcordRepositoryTest,
-)
+from tests.database.fazcord._common_fazcord_repository_test import CommonFazcordRepositoryTest
 
 
 class TestTrackEntryAssociationRepository(

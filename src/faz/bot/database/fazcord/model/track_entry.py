@@ -12,9 +12,7 @@ from faz.bot.database.fazcord.model.base_fazcord_model import BaseFazcordModel
 if TYPE_CHECKING:
     from faz.bot.database.fazcord.model.discord_channel import DiscordChannel
     from faz.bot.database.fazcord.model.discord_user import DiscordUser
-    from faz.bot.database.fazcord.model.track_entry_association import (
-        TrackEntryAssociation,
-    )
+    from faz.bot.database.fazcord.model.track_entry_association import TrackEntryAssociation
 
 
 class TrackEntry(BaseFazcordModel):

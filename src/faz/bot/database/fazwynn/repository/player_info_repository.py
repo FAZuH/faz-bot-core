@@ -5,9 +5,9 @@ from datetime import datetime
 from typing import TYPE_CHECKING, Any
 from uuid import UUID
 
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import select
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.player_info import PlayerInfo
 
 if TYPE_CHECKING:

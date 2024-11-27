@@ -5,16 +5,15 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 from typing import TYPE_CHECKING, Any, override
 
+from faz.utils.database.base_model import BaseModel
 from sqlalchemy import inspect
 
-from faz.utils.database.base_model import BaseModel
 from faz.bot.core.properties import Properties
 
 if TYPE_CHECKING:
-    from sqlalchemy import Connection
-
     from faz.utils.database.base_mysql_database import BaseMySQLDatabase
     from faz.utils.database.base_repository import BaseRepository
+    from sqlalchemy import Connection
 
 
 class CommonDbRepositoryTest:

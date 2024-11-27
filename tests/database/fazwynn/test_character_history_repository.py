@@ -6,9 +6,7 @@ import pandas
 from faz.bot.database.fazwynn.repository.character_history_repository import (
     CharacterHistoryRepository,
 )
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
 class TestCharacterHistoryRepository(CommonFazwynnRepositoryTest.Test[CharacterHistoryRepository]):

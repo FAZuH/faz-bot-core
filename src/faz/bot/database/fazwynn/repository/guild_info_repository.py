@@ -3,15 +3,14 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 from uuid import UUID
 
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import select
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.guild_info import GuildInfo
 
 if TYPE_CHECKING:
-    from sqlalchemy.ext.asyncio import AsyncSession
-
     from faz.utils.database.base_mysql_database import BaseMySQLDatabase
+    from sqlalchemy.ext.asyncio import AsyncSession
 
 
 class GuildInfoRepository(BaseRepository[GuildInfo, Any]):

@@ -4,10 +4,10 @@ from datetime import datetime
 from enum import Enum
 from typing import TYPE_CHECKING, Sequence
 
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazcord.model.whitelist_group import WhitelistGroup
 
 if TYPE_CHECKING:

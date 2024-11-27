@@ -3,9 +3,7 @@ from typing import override
 from faz.bot.database.fazwynn.repository.guild_member_history_repository import (
     GuildMemberHistoryRepository,
 )
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
 class TestGuildMemberHistoryRepository(

@@ -6,9 +6,7 @@ from typing import override
 from faz.bot.database.fazwynn.repository.player_activity_history_repository import (
     PlayerActivityHistoryRepository,
 )
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
 class TestPlayerActivityHistoryRepository(

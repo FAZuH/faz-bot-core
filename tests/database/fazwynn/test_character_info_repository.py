@@ -3,12 +3,8 @@ from __future__ import annotations
 from datetime import timedelta
 from typing import TYPE_CHECKING, override
 
-from faz.bot.database.fazwynn.repository.character_info_repository import (
-    CharacterInfoRepository,
-)
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from faz.bot.database.fazwynn.repository.character_info_repository import CharacterInfoRepository
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 if TYPE_CHECKING:
     from faz.bot.database.fazwynn.model.character_history import CharacterHistory

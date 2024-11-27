@@ -1,11 +1,7 @@
 from typing import override
 
-from faz.bot.database.fazwynn.repository.online_players_repository import (
-    OnlinePlayersRepository,
-)
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from faz.bot.database.fazwynn.repository.online_players_repository import OnlinePlayersRepository
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
 class TestOnlinePlayersRepository(CommonFazwynnRepositoryTest.Test[OnlinePlayersRepository]):

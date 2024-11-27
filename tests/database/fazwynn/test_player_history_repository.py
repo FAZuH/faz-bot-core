@@ -3,12 +3,8 @@ from typing import override
 
 import pandas
 
-from faz.bot.database.fazwynn.repository.player_history_repository import (
-    PlayerHistoryRepository,
-)
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from faz.bot.database.fazwynn.repository.player_history_repository import PlayerHistoryRepository
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
 class TestPlayerHistoryRepository(CommonFazwynnRepositoryTest.Test[PlayerHistoryRepository]):

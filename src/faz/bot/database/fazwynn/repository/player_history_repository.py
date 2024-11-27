@@ -4,11 +4,11 @@ from datetime import datetime
 from typing import TYPE_CHECKING, Any, Sequence
 
 import pandas
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import and_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import Select
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.player_history import PlayerHistory
 
 if TYPE_CHECKING:

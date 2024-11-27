@@ -4,14 +4,7 @@ from datetime import datetime as dt
 from typing import TYPE_CHECKING
 
 from sqlalchemy import ForeignKey, Index, UniqueConstraint
-from sqlalchemy.dialects.mysql import (
-    BINARY,
-    DATETIME,
-    DECIMAL,
-    INTEGER,
-    SMALLINT,
-    TINYINT,
-)
+from sqlalchemy.dialects.mysql import BINARY, DATETIME, DECIMAL, INTEGER, SMALLINT, TINYINT
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from faz.bot.database.fazwynn.model._unique_id_model import UniqueIdModel

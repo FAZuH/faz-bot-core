@@ -1,11 +1,7 @@
 from typing import override
 
-from faz.bot.database.fazwynn.repository.guild_history_repository import (
-    GuildHistoryRepository,
-)
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from faz.bot.database.fazwynn.repository.guild_history_repository import GuildHistoryRepository
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
 class TestGuildHistoryRepository(CommonFazwynnRepositoryTest.Test[GuildHistoryRepository]):

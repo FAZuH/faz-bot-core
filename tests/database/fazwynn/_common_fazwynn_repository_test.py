@@ -13,9 +13,7 @@ from faz.bot.database.fazwynn.model.guild_history import GuildHistory
 from faz.bot.database.fazwynn.model.guild_info import GuildInfo
 from faz.bot.database.fazwynn.model.guild_member_history import GuildMemberHistory
 from faz.bot.database.fazwynn.model.online_players import OnlinePlayers
-from faz.bot.database.fazwynn.model.player_activity_history import (
-    PlayerActivityHistory,
-)
+from faz.bot.database.fazwynn.model.player_activity_history import PlayerActivityHistory
 from faz.bot.database.fazwynn.model.player_history import PlayerHistory
 from faz.bot.database.fazwynn.model.player_info import PlayerInfo
 from faz.bot.database.fazwynn.model.worlds import Worlds

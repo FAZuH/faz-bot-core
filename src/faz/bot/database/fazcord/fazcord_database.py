@@ -1,24 +1,16 @@
 from typing import override
+
 from faz.utils.database.base_mysql_database import BaseMySQLDatabase
+
 from faz.bot.database.fazcord.model.base_fazcord_model import BaseFazcordModel
-from faz.bot.database.fazcord.repository.discord_channel_repository import (
-    DiscordChannelRepository,
-)
-from faz.bot.database.fazcord.repository.discord_guild_repository import (
-    DiscordGuildRepository,
-)
-from faz.bot.database.fazcord.repository.discord_user_repository import (
-    DiscordUserRepository,
-)
+from faz.bot.database.fazcord.repository.discord_channel_repository import DiscordChannelRepository
+from faz.bot.database.fazcord.repository.discord_guild_repository import DiscordGuildRepository
+from faz.bot.database.fazcord.repository.discord_user_repository import DiscordUserRepository
 from faz.bot.database.fazcord.repository.track_entry_association_repository import (
     TrackEntryAssociationRepository,
 )
-from faz.bot.database.fazcord.repository.track_entry_repository import (
-    TrackEntryRepository,
-)
-from faz.bot.database.fazcord.repository.whitelist_group_repository import (
-    WhitelistGroupRepository,
-)
+from faz.bot.database.fazcord.repository.track_entry_repository import TrackEntryRepository
+from faz.bot.database.fazcord.repository.whitelist_group_repository import WhitelistGroupRepository
 
 
 class FazcordDatabase(BaseMySQLDatabase):

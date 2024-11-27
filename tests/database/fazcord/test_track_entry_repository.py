@@ -1,11 +1,7 @@
 from typing import override
 
-from faz.bot.database.fazcord.repository.track_entry_repository import (
-    TrackEntryRepository,
-)
-from tests.database.fazcord._common_fazcord_repository_test import (
-    CommonFazcordRepositoryTest,
-)
+from faz.bot.database.fazcord.repository.track_entry_repository import TrackEntryRepository
+from tests.database.fazcord._common_fazcord_repository_test import CommonFazcordRepositoryTest
 
 
 class TestTrackEntryRepository(CommonFazcordRepositoryTest.Test[TrackEntryRepository]):
