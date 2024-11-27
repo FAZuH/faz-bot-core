@@ -30,7 +30,7 @@ jobs:
           docker run \
           --name mysql \
           -e MYSQL_ROOT_PASSWORD=password \
-          -d -p "3306:3306" mariadb:11.4.2
+          -d -p "127.0.0.1:3306:3306" mariadb:11.4.2
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
