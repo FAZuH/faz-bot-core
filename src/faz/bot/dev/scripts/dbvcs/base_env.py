@@ -7,7 +7,6 @@ from sqlalchemy import MetaData, engine_from_config
 
 
 class BaseEnv(ABC):
-
     def __init__(self) -> None:
         self._config = context.config
 
@@ -35,9 +34,7 @@ class BaseEnv(ABC):
             # If any of the environment variables are not set, do nothing
             return
 
-        self.section["sqlalchemy.url"] = (
-            f"mysql+pymysql://{user}:{password}@{host}/{self._db_name}"
-        )
+        self.section["sqlalchemy.url"] = f"mysql+pymysql://{user}:{password}@{host}/{self._db_name}"
 
     def _run_migrations_offline(self) -> None:
         """Run migrations in 'offline' mode."""

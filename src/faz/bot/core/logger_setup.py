@@ -116,12 +116,8 @@ class LoggerSetup:
         is_admin_ping: bool = False,
     ) -> None:
         webhook = SyncWebhook.from_url(cls._webhook_url)
-        embed = Embed(
-            title=title, description=f"```{description[:4090]}```", colour=colour
-        )
-        embed.add_field(
-            name="Timestamp", value=f"<t:{int(datetime.now().timestamp())}:R>"
-        )
+        embed = Embed(title=title, description=f"```{description[:4090]}```", colour=colour)
+        embed.add_field(name="Timestamp", value=f"<t:{int(datetime.now().timestamp())}:R>")
         admin_ping = f"<@{cls._admin_discord_id}>"
         if is_admin_ping:
             webhook.send(content=admin_ping, embed=embed)

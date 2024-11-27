@@ -2,15 +2,14 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any, Iterable, Literal, Sequence
 
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import desc, select
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.worlds import Worlds
 
 if TYPE_CHECKING:
-    from sqlalchemy.ext.asyncio import AsyncSession
-
     from faz.utils.database.base_mysql_database import BaseMySQLDatabase
+    from sqlalchemy.ext.asyncio import AsyncSession
 
 
 class WorldsRepository(BaseRepository[Worlds, Any]):
@@ -21,9 +20,7 @@ class WorldsRepository(BaseRepository[Worlds, Any]):
         self, entity: Iterable[Worlds], *, session: AsyncSession | None = None
     ) -> None:
         """Deletes worlds that's not up anymore, and updates player_count for worlds that's still up"""
-        stmt = self.table.delete().where(
-            self.model.name.not_in([e.name for e in entity])
-        )
+        stmt = self.table.delete().where(self.model.name.not_in([e.name for e in entity]))
         async with self.database.must_enter_async_session(session) as ses:
             await ses.execute(stmt)
             await self.insert(
@@ -39,11 +36,7 @@ class WorldsRepository(BaseRepository[Worlds, Any]):
         *,
         session: AsyncSession | None = None,
     ) -> Sequence[Worlds]:
-        orderby_ = (
-            self.model.player_count
-            if sortby == "player"
-            else desc(self.model.time_created)
-        )
+        orderby_ = self.model.player_count if sortby == "player" else desc(self.model.time_created)
         stmt = select(self.model).order_by(orderby_)
         async with self.database.must_enter_async_session(session) as ses:
             res = await ses.execute(stmt)

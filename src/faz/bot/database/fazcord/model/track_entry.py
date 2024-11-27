@@ -12,9 +12,7 @@ from faz.bot.database.fazcord.model.base_fazcord_model import BaseFazcordModel
 if TYPE_CHECKING:
     from faz.bot.database.fazcord.model.discord_channel import DiscordChannel
     from faz.bot.database.fazcord.model.discord_user import DiscordUser
-    from faz.bot.database.fazcord.model.track_entry_association import (
-        TrackEntryAssociation,
-    )
+    from faz.bot.database.fazcord.model.track_entry_association import TrackEntryAssociation
 
 
 class TrackEntry(BaseFazcordModel):
@@ -27,9 +25,7 @@ class TrackEntry(BaseFazcordModel):
     created_by: Mapped[int] = mapped_column(
         BIGINT, ForeignKey("discord_user.user_id", ondelete="CASCADE")
     )
-    created_on: Mapped[datetime] = mapped_column(
-        DATETIME, server_default=func.now()
-    )  # pylint: disable=E1102. Not sure why this causes pylint warning
+    created_on: Mapped[datetime] = mapped_column(DATETIME, server_default=func.now())  # pylint: disable=E1102. Not sure why this causes pylint warning
     type: Mapped[str] = mapped_column(
         ENUM("GUILD", "HUNTED", "ONLINE", "PLAYER", "STAFF"), nullable=False
     )

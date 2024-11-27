@@ -5,9 +5,9 @@ from datetime import datetime
 from typing import TYPE_CHECKING, Any
 from uuid import UUID
 
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import select
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.player_info import PlayerInfo
 
 if TYPE_CHECKING:
@@ -83,11 +83,7 @@ class PlayerInfoRepository(BaseRepository[PlayerInfo, Any]):
                 uuid = UUID(hex=username_or_uuid)
                 stmt = select(model).where(model.uuid == uuid.bytes).limit(1)
             except ValueError:
-                stmt = (
-                    select(model)
-                    .where(model.latest_username == username_or_uuid)
-                    .limit(1)
-                )
+                stmt = select(model).where(model.latest_username == username_or_uuid).limit(1)
         else:
             stmt = select(model).where(model.uuid == username_or_uuid).limit(1)
         async with self._database.must_enter_async_session(session) as ses:

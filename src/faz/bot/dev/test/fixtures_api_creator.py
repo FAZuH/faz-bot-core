@@ -11,7 +11,6 @@ from faz.bot.wynn.api.wynn_api import WynnApi
 
 
 class FixturesApiCreator(BaseWynnFixturesApi):
-
     def __init__(self) -> None:
         self._api = WynnApi()
 
@@ -27,18 +26,14 @@ class FixturesApiCreator(BaseWynnFixturesApi):
 
         players = await self._get_online_player_stats(uuids)
         logger.info(f"Fetched stats for {len(players)} players.")
-        to_dump1 = {
-            i: [resp.body.raw, resp.headers.raw] for i, resp in enumerate(players)
-        }
+        to_dump1 = {i: [resp.body.raw, resp.headers.raw] for i, resp in enumerate(players)}
         with open(self._PLAYERS_DATASET, "w") as f:
             json.dump(to_dump1, f, indent=4)
         logger.info(f"Saved fixture (file: {self._PLAYERS_DATASET})")
 
         guilds = await self._get_online_guild_stats(players)
         logger.info(f"Fetched stats for {len(guilds)} guilds.")
-        to_dump2 = {
-            i: [resp.body.raw, resp.headers.raw] for i, resp in enumerate(guilds)
-        }
+        to_dump2 = {i: [resp.body.raw, resp.headers.raw] for i, resp in enumerate(guilds)}
         with open(self._GUILDS_DATASET, "w") as f:
             json.dump(to_dump2, f, indent=4)
         logger.info(f"Saved fixture (file: {self._GUILDS_DATASET})")
@@ -58,16 +53,11 @@ class FixturesApiCreator(BaseWynnFixturesApi):
             curr_req = uuids[:concurr_reqs]
             uuids = uuids[concurr_reqs:]
             responses = await asyncio.gather(
-                *[
-                    self._api.player.get_full_stats(uuid.username_or_uuid)
-                    for uuid in curr_req
-                ]
+                *[self._api.player.get_full_stats(uuid.username_or_uuid) for uuid in curr_req]
             )
             ret.extend(responses)
             progress = 100 * (total - len(uuids)) / total
-            logger.info(
-                f"Fetched stats for {len(ret)} players ({progress:.2f}% complete)."
-            )
+            logger.info(f"Fetched stats for {len(ret)} players ({progress:.2f}% complete).")
         return ret
 
     async def _get_online_guild_stats(
@@ -86,12 +76,8 @@ class FixturesApiCreator(BaseWynnFixturesApi):
         while guild_names:
             curr_req = guild_names[:concurr_reqs]
             guild_names = guild_names[concurr_reqs:]
-            responses = await asyncio.gather(
-                *[self._api.guild.get(name) for name in curr_req]
-            )
+            responses = await asyncio.gather(*[self._api.guild.get(name) for name in curr_req])
             ret.extend(responses)
             progress = 100 * (total - len(guild_names)) / total
-            logger.info(
-                f"Fetched stats for {len(ret)} guilds ({progress:.2f}% complete)."
-            )
+            logger.info(f"Fetched stats for {len(ret)} guilds ({progress:.2f}% complete).")
         return ret

@@ -1,6 +1,5 @@
-from sqlalchemy import MetaData
-
 from faz.utils.database.base_model import BaseModel
+from sqlalchemy import MetaData
 
 
 class BaseFazwynnModel(BaseModel):

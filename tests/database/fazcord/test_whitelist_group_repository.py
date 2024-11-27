@@ -1,16 +1,10 @@
 from typing import override
 
-from faz.bot.database.fazcord.repository.whitelist_group_repository import (
-    WhitelistGroupRepository,
-)
-from tests.database.fazcord._common_fazcord_repository_test import (
-    CommonFazcordRepositoryTest,
-)
+from faz.bot.database.fazcord.repository.whitelist_group_repository import WhitelistGroupRepository
+from tests.database.fazcord._common_fazcord_repository_test import CommonFazcordRepositoryTest
 
 
-class TestWhitelistGroupRepository(
-    CommonFazcordRepositoryTest.Test[WhitelistGroupRepository]
-):
+class TestWhitelistGroupRepository(CommonFazcordRepositoryTest.Test[WhitelistGroupRepository]):
     async def test_ban_user(self) -> None:
         await self.repo.ban_user(1)  # act
         # assert: user is successfully banned

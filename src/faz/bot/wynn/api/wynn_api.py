@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from faz.bot.wynn.api.http_request import HttpRequest
 from faz.bot.wynn.api._wynn_ratelimit_handler import WynnRatelimitHandler
 from faz.bot.wynn.api.endpoint.guild_endpoint import GuildEndpoint
 from faz.bot.wynn.api.endpoint.player_endpoint import PlayerEndpoint
+from faz.bot.wynn.api.http_request import HttpRequest
 
 if TYPE_CHECKING:
     from faz.bot.wynn.api.base_ratelimit_handler import BaseRatelimitHandler

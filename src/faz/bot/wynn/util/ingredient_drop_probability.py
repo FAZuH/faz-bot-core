@@ -41,7 +41,5 @@ class IngredientDropProbability:
         return self._loot_boost
 
     @staticmethod
-    def _compute_boosted_probability(
-        base_probability: Decimal, loot_boost: int
-    ) -> Decimal:
+    def _compute_boosted_probability(base_probability: Decimal, loot_boost: int) -> Decimal:
         return base_probability * Decimal((loot_boost + 100) / 100)

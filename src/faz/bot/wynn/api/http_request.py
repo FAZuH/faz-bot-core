@@ -55,9 +55,7 @@ class HttpRequest:
         self, url_param: str, *, retries: None | int = None, retry_on_exc: bool = False
     ) -> BaseResponse[Any, Any]:
         if retry_on_exc and retries is None:
-            raise ValueError(
-                "Retries must be set to a valid integer if retry_on_exc is True"
-            )
+            raise ValueError("Retries must be set to a valid integer if retry_on_exc is True")
 
         if self._session is None or self._session.closed:
             raise ValueError("Session is not open")
@@ -101,9 +99,7 @@ class HttpRequest:
             if retry_on_exc and retries is not None:
                 if retries <= 0:
                     raise TooManyRetries(url_param + f" ({e})")
-                return await self.get(
-                    url_param, retries=retries - 1, retry_on_exc=retry_on_exc
-                )
+                return await self.get(url_param, retries=retries - 1, retry_on_exc=retry_on_exc)
             raise
 
     def is_open(self) -> bool:

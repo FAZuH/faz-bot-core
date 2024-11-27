@@ -1,5 +1,5 @@
 from abc import ABC
-from os.path import join, dirname
+from os.path import dirname, join
 
 
 class BaseWynnFixturesApi(ABC):

@@ -4,7 +4,6 @@ from tests.dbvcs.fazwynn._common_fazwynn_migration_test import CommonFazdbMigrat
 
 
 class Test_1_0_1(CommonFazdbMigrationTest.Test):
-
     @property
     @override
     def target_version(self) -> str:

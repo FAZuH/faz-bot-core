@@ -4,11 +4,11 @@ from datetime import datetime
 from typing import TYPE_CHECKING, Any, Sequence
 
 import pandas
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import and_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import Select
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.player_history import PlayerHistory
 
 if TYPE_CHECKING:
@@ -46,9 +46,7 @@ class PlayerHistoryRepository(BaseRepository[PlayerHistory, Any]):
             Sequence[PlayerHistory]: A sequence of `PlayerHistory` objects matching the
             specified criteria, sorted by `datetime` in ascending order.
         """
-        stmt = self.__get_select_between_period_stmt(
-            period_begin, period_end, player_uuid
-        )
+        stmt = self.__get_select_between_period_stmt(period_begin, period_end, player_uuid)
         async with self.database.must_enter_async_session(session) as ses:
             res = await ses.execute(stmt)
             return res.scalars().all()
@@ -76,9 +74,7 @@ class PlayerHistoryRepository(BaseRepository[PlayerHistory, Any]):
             pandas.DataFrame: A DataFrame containing `PlayerHistory` records matching
             the specified criteria, sorted by `datetime` in ascending order.
         """
-        stmt = self.__get_select_between_period_stmt(
-            period_begin, period_end, player_uuid
-        )
+        stmt = self.__get_select_between_period_stmt(period_begin, period_end, player_uuid)
         res = pandas.read_sql_query(stmt, self.database.engine)
         return res
 

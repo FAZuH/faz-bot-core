@@ -1,30 +1,20 @@
 from typing import override
+
 from faz.utils.database.base_mysql_database import BaseMySQLDatabase
+
 from faz.bot.database.fazcord.model.base_fazcord_model import BaseFazcordModel
-from faz.bot.database.fazcord.repository.discord_channel_repository import (
-    DiscordChannelRepository,
-)
-from faz.bot.database.fazcord.repository.discord_guild_repository import (
-    DiscordGuildRepository,
-)
-from faz.bot.database.fazcord.repository.discord_user_repository import (
-    DiscordUserRepository,
-)
+from faz.bot.database.fazcord.repository.discord_channel_repository import DiscordChannelRepository
+from faz.bot.database.fazcord.repository.discord_guild_repository import DiscordGuildRepository
+from faz.bot.database.fazcord.repository.discord_user_repository import DiscordUserRepository
 from faz.bot.database.fazcord.repository.track_entry_association_repository import (
     TrackEntryAssociationRepository,
 )
-from faz.bot.database.fazcord.repository.track_entry_repository import (
-    TrackEntryRepository,
-)
-from faz.bot.database.fazcord.repository.whitelist_group_repository import (
-    WhitelistGroupRepository,
-)
+from faz.bot.database.fazcord.repository.track_entry_repository import TrackEntryRepository
+from faz.bot.database.fazcord.repository.whitelist_group_repository import WhitelistGroupRepository
 
 
 class FazcordDatabase(BaseMySQLDatabase):
-    def __init__(
-        self, user: str, password: str, host: str, port: int, database: str
-    ) -> None:
+    def __init__(self, user: str, password: str, host: str, port: int, database: str) -> None:
         super().__init__(user, password, host, port, database)
         self._base_model = BaseFazcordModel()
 

@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
+from faz.utils.database.base_repository import BaseRepository
 from sortedcontainers.sortedlist import Sequence
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazwynn.model.character_info import CharacterInfo
 
 if TYPE_CHECKING:

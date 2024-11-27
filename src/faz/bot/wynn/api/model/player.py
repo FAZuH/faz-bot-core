@@ -44,9 +44,7 @@ class Player:
         self._uuid = UuidField(raw["uuid"])
         self._rank = raw["rank"]
         self._rank_badge = raw["rankBadge"]
-        self._legacy_rank_colour = Nullable(
-            self.LegacyRankColour, raw.get("legacyRankColour")
-        )
+        self._legacy_rank_colour = Nullable(self.LegacyRankColour, raw.get("legacyRankColour"))
         self._shortened_rank = raw["shortenedRank"]
         self._support_rank = raw["supportRank"]
         self._veteran = raw["veteran"] or False

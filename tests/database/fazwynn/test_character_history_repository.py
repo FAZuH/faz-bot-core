@@ -6,15 +6,10 @@ import pandas
 from faz.bot.database.fazwynn.repository.character_history_repository import (
     CharacterHistoryRepository,
 )
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
-class TestCharacterHistoryRepository(
-    CommonFazwynnRepositoryTest.Test[CharacterHistoryRepository]
-):
-
+class TestCharacterHistoryRepository(CommonFazwynnRepositoryTest.Test[CharacterHistoryRepository]):
     async def test_select_between_period_returns_within_range(self) -> None:
         # Prepare
         self.__insert_mock_character_history()
@@ -52,9 +47,7 @@ class TestCharacterHistoryRepository(
         mock = self._get_mock_data()[0]
 
         # Act
-        res = self.repo.select_between_period_as_dataframe(
-            mock.character_uuid, since, until
-        )
+        res = self.repo.select_between_period_as_dataframe(mock.character_uuid, since, until)
 
         # Assert
         self.assertEqual(len(res), 1)
@@ -71,9 +64,7 @@ class TestCharacterHistoryRepository(
         mock = self._get_mock_data()[0]
 
         # Act
-        res = self.repo.select_between_period_as_dataframe(
-            mock.character_uuid, since, until
-        )
+        res = self.repo.select_between_period_as_dataframe(mock.character_uuid, since, until)
 
         # Assert
         self.assertEqual(len(res), 0)

@@ -3,9 +3,7 @@ from typing import override
 from faz.bot.database.fazcord.repository.track_entry_association_repository import (
     TrackEntryAssociationRepository,
 )
-from tests.database.fazcord._common_fazcord_repository_test import (
-    CommonFazcordRepositoryTest,
-)
+from tests.database.fazcord._common_fazcord_repository_test import CommonFazcordRepositoryTest
 
 
 class TestTrackEntryAssociationRepository(
@@ -37,9 +35,7 @@ class TestTrackEntryAssociationRepository(
         mock_track = self._get_track_entry_mock_data()
         async with db.enter_async_session() as ses:
             await db.discord_guild.insert([mock_guild[0]], session=ses)
-            await db.discord_channel.insert(
-                [mock_channel[0], mock_channel[2]], session=ses
-            )
+            await db.discord_channel.insert([mock_channel[0], mock_channel[2]], session=ses)
             await db.discord_user.insert([mock_user[0]], session=ses)
             await db.track_entry.insert([mock_track[0], mock_track[2]], session=ses)
 

@@ -14,7 +14,6 @@ from faz.bot.dev.scripts.dbvcs.alembic_config import AlembicConfig
 
 
 class FazAlembic(CommandLine):
-
     def main(self, argv: Optional[Sequence[str]] = None) -> None:
         options = self.parser.parse_args(argv)
         if not hasattr(options, "cmd"):

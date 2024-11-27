@@ -41,6 +41,7 @@ Documentation = "https://github.com/FAZuH/faz-bot-core#readme"
 dev = [
     "alembic>=1.14.0",
     "black>=24.10.0",
+    "isort>=5.13.2",
     "pytest>=8.3.3",
     "ruff>=0.7.4",
 ]

@@ -3,18 +3,11 @@ from typing import override
 
 import pandas
 
-from faz.bot.database.fazwynn.repository.player_history_repository import (
-    PlayerHistoryRepository,
-)
-from tests.database.fazwynn._common_fazwynn_repository_test import (
-    CommonFazwynnRepositoryTest,
-)
+from faz.bot.database.fazwynn.repository.player_history_repository import PlayerHistoryRepository
+from tests.database.fazwynn._common_fazwynn_repository_test import CommonFazwynnRepositoryTest
 
 
-class TestPlayerHistoryRepository(
-    CommonFazwynnRepositoryTest.Test[PlayerHistoryRepository]
-):
-
+class TestPlayerHistoryRepository(CommonFazwynnRepositoryTest.Test[PlayerHistoryRepository]):
     async def test_select_between_period_returns_within_range(self) -> None:
         # Prepare
         self.__insert_mock_player_history()

@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any, Sequence
 
+from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from faz.utils.database.base_repository import BaseRepository
 from faz.bot.database.fazcord.model.track_entry import TrackEntry
 
 if TYPE_CHECKING:
@@ -31,9 +31,7 @@ class TrackEntryRepository(BaseRepository[TrackEntry, Any]):
         async with self.database.must_enter_async_session(session) as ses:
             res = await self.select_by_channel_id(channel_id, session=ses)
             if res is None:
-                raise ValueError(
-                    f"Cannot find track_entry entry with channel id: {channel_id}"
-                )
+                raise ValueError(f"Cannot find track_entry entry with channel id: {channel_id}")
             res.enabled = not res.enabled
             await ses.commit()
             return res.enabled

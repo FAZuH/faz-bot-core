@@ -11,9 +11,7 @@ class PlayerActivityHistory(BaseFazwynnModel):
     __tablename__ = "player_activity_history"
 
     uuid: Mapped[bytes] = mapped_column(BINARY(16), nullable=False, primary_key=True)
-    logon_datetime: Mapped[dt] = mapped_column(
-        DATETIME, nullable=False, primary_key=True
-    )
+    logon_datetime: Mapped[dt] = mapped_column(DATETIME, nullable=False, primary_key=True)
     logoff_datetime: Mapped[dt] = mapped_column(DATETIME, nullable=False)
 
     __table_args__ = (

@@ -9,13 +9,10 @@ from . import fazcord, fazwynn
 
 
 class AlembicConfig(Config):
-
     FAZCORD_ENV_PATH = fazcord.__path__[0]  # type: ignore
     FAZWYNN_ENV_PATH = fazwynn.__path__[0]  # type: ignore
 
-    def __init__(
-        self, section_name: str | None = None, cmd_opts: Namespace | None = None
-    ) -> None:
+    def __init__(self, section_name: str | None = None, cmd_opts: Namespace | None = None) -> None:
         if section_name is None:
             super().__init__()
         else:
@@ -30,18 +27,14 @@ class AlembicConfig(Config):
             "sqlalchemy.url",
             "mysql+pymysql://faz:password@localhost/faz-cord",
         )
-        self.set_section_option(
-            section.FAZCORD.value, "script_location", self.FAZCORD_ENV_PATH
-        )
+        self.set_section_option(section.FAZCORD.value, "script_location", self.FAZCORD_ENV_PATH)
 
         self.set_section_option(
             section.FAZWYNN.value,
             "sqlalchemy.url",
             "mysql+pymysql://faz:password@localhost/faz-wynn",
         )
-        self.set_section_option(
-            section.FAZWYNN.value, "script_location", self.FAZWYNN_ENV_PATH
-        )
+        self.set_section_option(section.FAZWYNN.value, "script_location", self.FAZWYNN_ENV_PATH)
 
         self.set_section_option(
             section.FAZCORD_TEST.value,
