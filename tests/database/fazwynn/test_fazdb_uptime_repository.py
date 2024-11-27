@@ -8,9 +8,7 @@ from tests.database.fazwynn._common_fazwynn_repository_test import (
 )
 
 
-class TestFazdbUptimeRepository(
-    CommonFazwynnRepositoryTest.Test[FazdbUptimeRepository]
-):
+class TestFazdbUptimeRepository(CommonFazwynnRepositoryTest.Test[FazdbUptimeRepository]):
     @override
     def _get_mock_data(self):
         return self._get_fazdb_uptime_mock_data()

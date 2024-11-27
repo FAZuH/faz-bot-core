@@ -83,11 +83,7 @@ class PlayerInfoRepository(BaseRepository[PlayerInfo, Any]):
                 uuid = UUID(hex=username_or_uuid)
                 stmt = select(model).where(model.uuid == uuid.bytes).limit(1)
             except ValueError:
-                stmt = (
-                    select(model)
-                    .where(model.latest_username == username_or_uuid)
-                    .limit(1)
-                )
+                stmt = select(model).where(model.latest_username == username_or_uuid).limit(1)
         else:
             stmt = select(model).where(model.uuid == username_or_uuid).limit(1)
         async with self._database.must_enter_async_session(session) as ses:

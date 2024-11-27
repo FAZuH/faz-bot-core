@@ -42,9 +42,7 @@ def check_env() -> None:
 
     missing_vars = [var for var in required_vars if not os.getenv(var)]
     if missing_vars:
-        print(
-            f"Error: Required environment variables not set: {', '.join(missing_vars)}"
-        )
+        print(f"Error: Required environment variables not set: {', '.join(missing_vars)}")
         sys.exit(1)
 
 
@@ -108,9 +106,7 @@ def create_user() -> None:
     mysql_user = os.environ["MYSQL_USER"]
     mysql_password = os.environ["MYSQL_PASSWORD"]
     print(f"Creating user: {mysql_user}")
-    run_sql(
-        f"CREATE USER IF NOT EXISTS '{mysql_user}'@'%' IDENTIFIED BY '{mysql_password}';"
-    )
+    run_sql(f"CREATE USER IF NOT EXISTS '{mysql_user}'@'%' IDENTIFIED BY '{mysql_password}';")
 
 
 def create_dbs() -> None:

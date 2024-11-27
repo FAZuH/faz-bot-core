@@ -14,9 +14,7 @@ if TYPE_CHECKING:
     from faz.bot.database.fazwynn.model.character_history import CharacterHistory
 
 
-class TestCharacterInfoRepository(
-    CommonFazwynnRepositoryTest.Test[CharacterInfoRepository]
-):
+class TestCharacterInfoRepository(CommonFazwynnRepositoryTest.Test[CharacterInfoRepository]):
     async def __prepare_char_history(self) -> tuple[CharacterHistory, CharacterHistory]:
         mock_info = self._get_mock_data()[0]
         mocks_history = self._get_character_history_mock_data()

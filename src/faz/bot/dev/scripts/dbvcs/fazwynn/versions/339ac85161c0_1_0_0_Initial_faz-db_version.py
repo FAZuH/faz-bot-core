@@ -1,7 +1,7 @@
 """1.0.0 Initial faz-wynn version
 
 Revision ID: 339ac85161c0
-Revises: 
+Revises:
 Create Date: 2024-10-26 13:30:38.564124
 
 """
@@ -24,15 +24,9 @@ def upgrade() -> None:
     op.create_table(
         "character_history",
         sa.Column("character_uuid", sa.BINARY(length=16), nullable=False),
-        sa.Column(
-            "level", mysql.TINYINT(display_width=4), autoincrement=False, nullable=False
-        ),
-        sa.Column(
-            "xp", mysql.BIGINT(display_width=20), autoincrement=False, nullable=False
-        ),
-        sa.Column(
-            "wars", mysql.INTEGER(display_width=11), autoincrement=False, nullable=False
-        ),
+        sa.Column("level", mysql.TINYINT(display_width=4), autoincrement=False, nullable=False),
+        sa.Column("xp", mysql.BIGINT(display_width=20), autoincrement=False, nullable=False),
+        sa.Column("wars", mysql.INTEGER(display_width=11), autoincrement=False, nullable=False),
         sa.Column("playtime", mysql.DECIMAL(precision=7, scale=2), nullable=False),
         sa.Column(
             "mobs_killed",
@@ -100,9 +94,7 @@ def upgrade() -> None:
         sa.Column("jeweling", mysql.DECIMAL(precision=5, scale=2), nullable=False),
         sa.Column("scribing", mysql.DECIMAL(precision=5, scale=2), nullable=False),
         sa.Column("tailoring", mysql.DECIMAL(precision=5, scale=2), nullable=False),
-        sa.Column(
-            "weaponsmithing", mysql.DECIMAL(precision=5, scale=2), nullable=False
-        ),
+        sa.Column("weaponsmithing", mysql.DECIMAL(precision=5, scale=2), nullable=False),
         sa.Column("woodworking", mysql.DECIMAL(precision=5, scale=2), nullable=False),
         sa.Column("mining", mysql.DECIMAL(precision=5, scale=2), nullable=False),
         sa.Column("woodcutting", mysql.DECIMAL(precision=5, scale=2), nullable=False),
@@ -159,9 +151,7 @@ def upgrade() -> None:
     op.create_table(
         "guild_history",
         sa.Column("name", mysql.VARCHAR(length=30), nullable=False),
-        sa.Column(
-            "level", mysql.DECIMAL(unsigned=True, precision=5, scale=2), nullable=False
-        ),
+        sa.Column("level", mysql.DECIMAL(unsigned=True, precision=5, scale=2), nullable=False),
         sa.Column(
             "territories",
             mysql.SMALLINT(display_width=5, unsigned=True),
@@ -253,9 +243,7 @@ def upgrade() -> None:
         sa.Column("guild_name", mysql.VARCHAR(length=30), nullable=False),
         sa.Column(
             "guild_rank",
-            mysql.ENUM(
-                "OWNER", "CHIEF", "STRATEGIST", "CAPTAIN", "RECRUITER", "RECRUIT"
-            ),
+            mysql.ENUM("OWNER", "CHIEF", "STRATEGIST", "CAPTAIN", "RECRUITER", "RECRUIT"),
             nullable=False,
         ),
         sa.Column("rank", mysql.VARCHAR(length=30), nullable=False),
@@ -287,9 +275,7 @@ def upgrade() -> None:
         sa.Column("latest_username", mysql.VARCHAR(length=16), nullable=False),
         sa.Column("first_join", mysql.DATETIME(), nullable=False),
         sa.Column("guild_uuid", sa.BINARY(length=16), nullable=True),
-        sa.ForeignKeyConstraint(
-            ["guild_uuid"], ["guild_info.uuid"], name="fk_guild_uuid"
-        ),
+        sa.ForeignKeyConstraint(["guild_uuid"], ["guild_info.uuid"], name="fk_guild_uuid"),
         sa.PrimaryKeyConstraint("uuid"),
         mysql_collate="utf8mb4_uca1400_ai_ci",
         mysql_default_charset="utf8mb4",

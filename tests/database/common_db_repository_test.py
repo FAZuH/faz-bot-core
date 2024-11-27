@@ -112,9 +112,7 @@ class CommonDbRepositoryTest:
                 non_modified_values_lambda(row),
                 non_modified_values_lambda(mock_data[3]),
             )
-            self.assertNotEqual(
-                modified_values_lambda(row), modified_values_lambda(mock_data[0])
-            )
+            self.assertNotEqual(modified_values_lambda(row), modified_values_lambda(mock_data[0]))
 
         async def test_delete_successful(self) -> None:
             """Test if delete deletes the specified entry properly."""

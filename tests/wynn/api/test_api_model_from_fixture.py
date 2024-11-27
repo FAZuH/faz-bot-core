@@ -98,9 +98,7 @@ class TestApiModelFromFixture(unittest.TestCase):
             self.assertIsInstance(body.rank, str)
             self.assertIsInstance(body.rank_badge, (NoneType, str))
             # legacy_rank_colour
-            self.assertIsInstance(
-                body.legacy_rank_colour, (Player.LegacyRankColour, NoneType)
-            )
+            self.assertIsInstance(body.legacy_rank_colour, (Player.LegacyRankColour, NoneType))
             if body.legacy_rank_colour is not None:
                 self.assertIsInstance(body.legacy_rank_colour.main, str)
                 self.assertIsInstance(body.legacy_rank_colour.sub, str)

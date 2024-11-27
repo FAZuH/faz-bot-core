@@ -22,9 +22,7 @@ from faz.bot.database.fazcord.repository.whitelist_group_repository import (
 
 
 class FazcordDatabase(BaseMySQLDatabase):
-    def __init__(
-        self, user: str, password: str, host: str, port: int, database: str
-    ) -> None:
+    def __init__(self, user: str, password: str, host: str, port: int, database: str) -> None:
         super().__init__(user, password, host, port, database)
         self._base_model = BaseFazcordModel()
 

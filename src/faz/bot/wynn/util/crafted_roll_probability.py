@@ -49,9 +49,7 @@ class CraftedRollProbability:
 
             # Calculate ingredient probability distribution
             ing_base_values = np.linspace(ing.min_value, ing.max_value, 101)
-            ing_rolls_boosted = np.floor(
-                np.round(ing_base_values) * ing_stat_eff
-            ).astype(int)
+            ing_rolls_boosted = np.floor(np.round(ing_base_values) * ing_stat_eff).astype(int)
             offset = -np.min(ing_rolls_boosted)  # Offset to ensure no negative indices
             ing_rolls_occurrences = np.bincount(ing_rolls_boosted + offset)
             ing_prob_dist = ing_rolls_occurrences / 101

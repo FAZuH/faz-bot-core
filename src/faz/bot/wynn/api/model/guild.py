@@ -74,18 +74,14 @@ class Guild:
 
         def iter_online_members(
             self,
-        ) -> Generator[
-            tuple[str, UsernameOrUuidField, Guild.Members.MemberInfo], Any, None
-        ]:
+        ) -> Generator[tuple[str, UsernameOrUuidField, Guild.Members.MemberInfo], Any, None]:
             for rank, uuid, memberinfo in self.iter_members():
                 if memberinfo.online:
                     yield (rank, uuid, memberinfo)
 
         def iter_members(
             self,
-        ) -> Generator[
-            tuple[str, UsernameOrUuidField, Guild.Members.MemberInfo], Any, None
-        ]:
+        ) -> Generator[tuple[str, UsernameOrUuidField, Guild.Members.MemberInfo], Any, None]:
             all_: dict[str, dict[UsernameOrUuidField, Guild.Members.MemberInfo]] = {
                 "owner": self.owner,
                 "chief": self.chief,

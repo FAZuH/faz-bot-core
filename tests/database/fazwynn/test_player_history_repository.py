@@ -11,10 +11,7 @@ from tests.database.fazwynn._common_fazwynn_repository_test import (
 )
 
 
-class TestPlayerHistoryRepository(
-    CommonFazwynnRepositoryTest.Test[PlayerHistoryRepository]
-):
-
+class TestPlayerHistoryRepository(CommonFazwynnRepositoryTest.Test[PlayerHistoryRepository]):
     async def test_select_between_period_returns_within_range(self) -> None:
         # Prepare
         self.__insert_mock_player_history()

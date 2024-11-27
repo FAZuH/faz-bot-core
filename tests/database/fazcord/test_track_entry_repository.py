@@ -87,9 +87,7 @@ class TestTrackEntryRepository(CommonFazcordRepositoryTest.Test[TrackEntryReposi
         mock_user = self._get_discord_user_mock_data()
         async with db.enter_async_session() as ses:
             await db.discord_guild.insert([mock_guild[0]], session=ses)
-            await db.discord_channel.insert(
-                [mock_channel[0], mock_channel[2]], session=ses
-            )
+            await db.discord_channel.insert([mock_channel[0], mock_channel[2]], session=ses)
             await db.discord_user.insert([mock_user[0]], session=ses)
 
     @override

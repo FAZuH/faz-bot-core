@@ -1,7 +1,7 @@
 """1.0.0 Initial faz-cord version
 
 Revision ID: 305fa6683a43
-Revises: 
+Revises:
 Create Date: 2024-10-26 23:44:12.333059
 
 """
@@ -51,9 +51,7 @@ def upgrade() -> None:
     )
     op.create_table(
         "whitelist_group",
-        sa.Column(
-            "id", mysql.BIGINT(display_width=20), autoincrement=False, nullable=False
-        ),
+        sa.Column("id", mysql.BIGINT(display_width=20), autoincrement=False, nullable=False),
         sa.Column("type", mysql.VARCHAR(length=32), nullable=False),
         sa.Column("reason", mysql.VARCHAR(length=255), nullable=True),
         sa.Column("from", mysql.DATETIME(), nullable=False),
@@ -88,9 +86,7 @@ def upgrade() -> None:
     )
     op.create_table(
         "track_entry",
-        sa.Column(
-            "id", mysql.INTEGER(display_width=11), autoincrement=True, nullable=False
-        ),
+        sa.Column("id", mysql.INTEGER(display_width=11), autoincrement=True, nullable=False),
         sa.Column(
             "channel_id",
             mysql.BIGINT(display_width=20),
@@ -136,9 +132,7 @@ def upgrade() -> None:
     )
     op.create_table(
         "track_entry_associations",
-        sa.Column(
-            "id", mysql.INTEGER(display_width=11), autoincrement=True, nullable=False
-        ),
+        sa.Column("id", mysql.INTEGER(display_width=11), autoincrement=True, nullable=False),
         sa.Column(
             "track_entry_id",
             mysql.INTEGER(display_width=11),

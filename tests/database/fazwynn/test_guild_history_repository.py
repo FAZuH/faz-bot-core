@@ -8,9 +8,7 @@ from tests.database.fazwynn._common_fazwynn_repository_test import (
 )
 
 
-class TestGuildHistoryRepository(
-    CommonFazwynnRepositoryTest.Test[GuildHistoryRepository]
-):
+class TestGuildHistoryRepository(CommonFazwynnRepositoryTest.Test[GuildHistoryRepository]):
     @override
     async def _create_table(self) -> None:
         db = self.database

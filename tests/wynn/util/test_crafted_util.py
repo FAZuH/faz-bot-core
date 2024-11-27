@@ -82,9 +82,7 @@ class TestCraftedUtil(TestCase):
         # Assert
         def check(craft: CraftedRollProbability, expected: list[float]) -> None:
             for i in range(len(expected)):
-                self.assertAlmostEqual(
-                    expected[i], float(craft.roll_pmfs[i]), delta=0.001
-                )
+                self.assertAlmostEqual(expected[i], float(craft.roll_pmfs[i]), delta=0.001)
 
         check(craft1, [0.5049505, 0.4950495])
         check(craft2, [0.25742574, 0.48514851, 0.25742574])

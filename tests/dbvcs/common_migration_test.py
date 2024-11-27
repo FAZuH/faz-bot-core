@@ -13,9 +13,7 @@ from faz.bot.dev.scripts.dbvcs.alembic_config import AlembicConfig
 
 
 class CommonMigrationTest:
-
     class Test(TestCase, ABC):
-
         @override
         def setUp(self) -> None:
             self.config = AlembicConfig(self.section_name)
@@ -77,17 +75,13 @@ class CommonMigrationTest:
             if None in {user, password, host}:
                 return
 
-            self.section["sqlalchemy.url"] = (
-                f"mysql+pymysql://{user}:{password}@{host}/{db_name}"
-            )
+            self.section["sqlalchemy.url"] = f"mysql+pymysql://{user}:{password}@{host}/{db_name}"
 
         def _drop_all(self):
             engine = engine_from_config(self.section, prefix="sqlalchemy.")
             with engine.connect() as conn:
                 # Get environment context
-                env = EnvironmentContext(
-                    self.config, ScriptDirectory.from_config(self.config)
-                )
+                env = EnvironmentContext(self.config, ScriptDirectory.from_config(self.config))
                 env.configure(conn)
 
                 # Create a context manager that provides the connection

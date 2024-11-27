@@ -8,9 +8,7 @@ from tests.database.fazwynn._common_fazwynn_repository_test import (
 )
 
 
-class TestOnlinePlayersRepository(
-    CommonFazwynnRepositoryTest.Test[OnlinePlayersRepository]
-):
+class TestOnlinePlayersRepository(CommonFazwynnRepositoryTest.Test[OnlinePlayersRepository]):
     @override
     def _get_mock_data(self):
         return self._get_online_players_mock_data()

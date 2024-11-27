@@ -8,9 +8,7 @@ from tests.database.fazcord._common_fazcord_repository_test import (
 )
 
 
-class TestWhitelistGroupRepository(
-    CommonFazcordRepositoryTest.Test[WhitelistGroupRepository]
-):
+class TestWhitelistGroupRepository(CommonFazcordRepositoryTest.Test[WhitelistGroupRepository]):
     async def test_ban_user(self) -> None:
         await self.repo.ban_user(1)  # act
         # assert: user is successfully banned

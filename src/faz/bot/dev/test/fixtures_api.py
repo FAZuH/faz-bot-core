@@ -9,7 +9,6 @@ from faz.bot.dev.test._base_wynn_fixtures_api import BaseWynnFixturesApi
 
 
 class FixturesApi(BaseWynnFixturesApi):
-
     online_uuids: OnlinePlayersResponse | None = None
     player_stats: list[PlayerResponse] = []
     guild_stats: list[GuildResponse] = []
@@ -32,9 +31,7 @@ class FixturesApi(BaseWynnFixturesApi):
     def _load_players(cls) -> None:
         if os.path.exists(cls._PLAYERS_DATASET):
             with open(cls._PLAYERS_DATASET, "r") as f:
-                cls.player_stats = [
-                    PlayerResponse(*resp) for resp in json.load(f).values()
-                ]
+                cls.player_stats = [PlayerResponse(*resp) for resp in json.load(f).values()]
         if cls.player_stats is None:
             raise ValueError("No player stats fixture found")
 
@@ -42,8 +39,6 @@ class FixturesApi(BaseWynnFixturesApi):
     def _load_guilds(cls) -> None:
         if os.path.exists(cls._GUILDS_DATASET):
             with open(cls._GUILDS_DATASET, "r") as f:
-                cls.guild_stats = [
-                    GuildResponse(*resp) for resp in json.load(f).values()
-                ]
+                cls.guild_stats = [GuildResponse(*resp) for resp in json.load(f).values()]
         if cls.guild_stats is None:
             raise ValueError("No guild stats fixture found")

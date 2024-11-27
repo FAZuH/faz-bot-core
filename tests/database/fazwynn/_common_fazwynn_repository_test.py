@@ -136,9 +136,7 @@ class CommonFazwynnRepositoryTest:
         def _get_guild_info_mock_data(cls):
             uuid1 = UUID("b30f5e97-957d-47f6-bf1e-9e48d9fea200").bytes
             uuid2 = UUID("33c3ad56-5e9b-4bfe-9685-9fc4df2a67fa").bytes
-            mock1 = GuildInfo(
-                name="a", prefix="b", created=cls._get_mock_datetime(), uuid=uuid1
-            )
+            mock1 = GuildInfo(name="a", prefix="b", created=cls._get_mock_datetime(), uuid=uuid1)
             mock2 = mock1.clone()
             mock3 = mock1.clone()
             mock3.name = "b"
@@ -225,9 +223,7 @@ class CommonFazwynnRepositoryTest:
         def _get_player_info_mock_data(cls):
             uuid1 = UUID("b30f5e97-957d-47f6-bf1e-9e48d9fea200").bytes
             uuid2 = UUID("33c3ad56-5e9b-4bfe-9685-9fc4df2a67fa").bytes
-            mock1 = PlayerInfo(
-                uuid=uuid1, latest_username="a", first_join=cls._get_mock_datetime()
-            )
+            mock1 = PlayerInfo(uuid=uuid1, latest_username="a", first_join=cls._get_mock_datetime())
             mock2 = mock1.clone()
             mock3 = mock1.clone()
             mock3.uuid = uuid2

@@ -45,9 +45,7 @@ class CharacterHistoryRepository(BaseRepository[CharacterHistory, Any]):
             Sequence[PlayerHistory]: A sequence of `PlayerHistory` objects matching the
             specified criteria, sorted by `datetime` in ascending order.
         """
-        stmt = self.__get_select_between_period_stmt(
-            period_begin, period_end, character_uuid
-        )
+        stmt = self.__get_select_between_period_stmt(period_begin, period_end, character_uuid)
         async with self.database.must_enter_async_session(session) as ses:
             res = await ses.execute(stmt)
             return res.scalars().all()
@@ -75,9 +73,7 @@ class CharacterHistoryRepository(BaseRepository[CharacterHistory, Any]):
             pandas.DataFrame: A DataFrame containing `PlayerHistory` records matching
             the specified criteria, sorted by `datetime` in ascending order.
         """
-        stmt = self.__get_select_between_period_stmt(
-            period_begin, period_end, character_uuid
-        )
+        stmt = self.__get_select_between_period_stmt(period_begin, period_end, character_uuid)
         res = pandas.read_sql_query(stmt, self.database.engine)
         return res
 
