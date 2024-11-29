@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/FAZuH/python-faz-bot-core/compare/v0.3.0...v0.4.0) (2024-11-29)
+
+
+### Features
+
+* Add select as df member history ([#23](https://github.com/FAZuH/python-faz-bot-core/issues/23)) ([af007a9](https://github.com/FAZuH/python-faz-bot-core/commit/af007a9494aeea23a8ac81c97c0bd8e323ceeaaf))
+
+
+
 # [0.3.0](https://github.com/FAZuH/python-faz-bot-core/compare/v0.2.1...v0.3.0) (2024-11-27)
 
 
@@ -21,10 +30,6 @@
 
 
 ## [0.1.5](https://github.com/FAZuH/python-faz-bot-core/compare/v0.1.4...v0.1.5) (2024-11-25)
-
-
-
-## [0.1.4](https://github.com/FAZuH/python-faz-bot-core/compare/v0.1.3...v0.1.4) (2024-11-24)
 
 
 
