@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import timedelta
-from typing import TYPE_CHECKING, override
+from typing import override, TYPE_CHECKING
 from uuid import UUID
 
 from faz.bot.database.fazwynn.repository.guild_info_repository import GuildInfoRepository

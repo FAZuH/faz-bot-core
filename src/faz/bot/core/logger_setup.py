@@ -1,10 +1,12 @@
+from datetime import datetime
 import os
 import sys
 import traceback
-from datetime import datetime
 
 from loguru import logger
-from nextcord import Colour, Embed, SyncWebhook
+from nextcord import Colour
+from nextcord import Embed
+from nextcord import SyncWebhook
 
 
 class LoggerSetup:

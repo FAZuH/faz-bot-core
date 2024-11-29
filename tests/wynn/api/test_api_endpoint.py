@@ -1,6 +1,6 @@
-import unittest
 from datetime import datetime
 from typing import override
+import unittest
 
 from faz.bot.wynn.api.wynn_api import WynnApi
 
