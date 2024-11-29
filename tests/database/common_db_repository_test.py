@@ -1,9 +1,10 @@
 from __future__ import annotations
 
-import unittest
-from abc import ABC, abstractmethod
+from abc import ABC
+from abc import abstractmethod
 from datetime import datetime
-from typing import TYPE_CHECKING, Any, override
+from typing import Any, override, TYPE_CHECKING
+import unittest
 
 from faz.utils.database.base_model import BaseModel
 from sqlalchemy import inspect

@@ -1,7 +1,10 @@
 from datetime import datetime
 
-from sqlalchemy.dialects.mysql import DATETIME, SMALLINT, VARCHAR
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.dialects.mysql import DATETIME
+from sqlalchemy.dialects.mysql import SMALLINT
+from sqlalchemy.dialects.mysql import VARCHAR
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
 
 from faz.bot.database.fazwynn.model.base_fazwynn_model import BaseFazwynnModel
 

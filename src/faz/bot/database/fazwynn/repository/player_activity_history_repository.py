@@ -1,10 +1,12 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta
-from typing import TYPE_CHECKING, Sequence
+from datetime import datetime
+from datetime import timedelta
+from typing import Sequence, TYPE_CHECKING
 
 from faz.utils.database.base_repository import BaseRepository
-from sqlalchemy import and_, select
+from sqlalchemy import and_
+from sqlalchemy import select
 
 from faz.bot.database.fazwynn.model.player_activity_history import PlayerActivityHistory
 

@@ -1,8 +1,12 @@
 from datetime import datetime as dt
 
-from sqlalchemy import Index, UniqueConstraint
-from sqlalchemy.dialects.mysql import BIGINT, BINARY, DATETIME
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import Index
+from sqlalchemy import UniqueConstraint
+from sqlalchemy.dialects.mysql import BIGINT
+from sqlalchemy.dialects.mysql import BINARY
+from sqlalchemy.dialects.mysql import DATETIME
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
 
 from faz.bot.database.fazwynn.model._unique_id_model import UniqueIdModel
 

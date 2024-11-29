@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import TYPE_CHECKING, Any, Sequence
+from typing import Any, Sequence, TYPE_CHECKING
 
-import pandas
 from faz.utils.database.base_repository import BaseRepository
-from sqlalchemy import Select, and_, select
+import pandas
+from sqlalchemy import and_
+from sqlalchemy import Select
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from faz.bot.database.fazwynn.model.character_history import CharacterHistory
@@ -52,7 +54,7 @@ class CharacterHistoryRepository(BaseRepository[CharacterHistory, Any]):
         period_end: datetime,
     ) -> pandas.DataFrame:
         """Selects records for a given player within a specified period and returns
-        them as a pandas DataFrame. Sorted by dataframe.
+        them as a pandas DataFrame. Sorted by datetime.
 
         Args:
             player_uuid (bytes): The UUID of the player as a byte string.

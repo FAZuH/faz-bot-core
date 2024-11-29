@@ -3,9 +3,17 @@ from __future__ import annotations
 from datetime import datetime as dt
 from typing import TYPE_CHECKING
 
-from sqlalchemy import ForeignKey, Index, UniqueConstraint
-from sqlalchemy.dialects.mysql import BINARY, DATETIME, DECIMAL, ENUM, VARCHAR
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import ForeignKey
+from sqlalchemy import Index
+from sqlalchemy import UniqueConstraint
+from sqlalchemy.dialects.mysql import BINARY
+from sqlalchemy.dialects.mysql import DATETIME
+from sqlalchemy.dialects.mysql import DECIMAL
+from sqlalchemy.dialects.mysql import ENUM
+from sqlalchemy.dialects.mysql import VARCHAR
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
+from sqlalchemy.orm import relationship
 
 from faz.bot.database.fazwynn.model._unique_id_model import UniqueIdModel
 

@@ -1,12 +1,22 @@
 from __future__ import annotations
 
-import math
 from datetime import datetime as dt
+import math
 from typing import TYPE_CHECKING
 
-from sqlalchemy import ForeignKey, Index, UniqueConstraint
-from sqlalchemy.dialects.mysql import BIGINT, BINARY, BOOLEAN, DATETIME, DECIMAL, INTEGER, TINYINT
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import ForeignKey
+from sqlalchemy import Index
+from sqlalchemy import UniqueConstraint
+from sqlalchemy.dialects.mysql import BIGINT
+from sqlalchemy.dialects.mysql import BINARY
+from sqlalchemy.dialects.mysql import BOOLEAN
+from sqlalchemy.dialects.mysql import DATETIME
+from sqlalchemy.dialects.mysql import DECIMAL
+from sqlalchemy.dialects.mysql import INTEGER
+from sqlalchemy.dialects.mysql import TINYINT
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
+from sqlalchemy.orm import relationship
 
 from faz.bot.database.fazwynn.model._unique_id_model import UniqueIdModel
 

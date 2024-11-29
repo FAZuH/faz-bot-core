@@ -1,5 +1,6 @@
+from abc import ABC
+from abc import abstractmethod
 import os
-from abc import ABC, abstractmethod
 from typing import override
 from unittest import TestCase
 from unittest.mock import MagicMock
@@ -7,7 +8,8 @@ from unittest.mock import MagicMock
 from alembic import command
 from alembic.environment import EnvironmentContext
 from alembic.script.base import ScriptDirectory
-from sqlalchemy import engine_from_config, text
+from sqlalchemy import engine_from_config
+from sqlalchemy import text
 
 from faz.bot.dev.scripts.dbvcs.alembic_config import AlembicConfig
 

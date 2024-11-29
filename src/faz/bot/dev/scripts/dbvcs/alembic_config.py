@@ -5,7 +5,8 @@ from enum import Enum
 
 from alembic.config import Config
 
-from . import fazcord, fazwynn
+from . import fazcord
+from . import fazwynn
 
 
 class AlembicConfig(Config):

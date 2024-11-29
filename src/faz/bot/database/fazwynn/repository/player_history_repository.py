@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import TYPE_CHECKING, Any, Sequence
+from typing import Any, Sequence, TYPE_CHECKING
 
-import pandas
 from faz.utils.database.base_repository import BaseRepository
-from sqlalchemy import and_, select
+import pandas
+from sqlalchemy import and_
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import Select
 

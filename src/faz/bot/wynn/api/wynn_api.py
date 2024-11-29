@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any
+from typing import Any, TYPE_CHECKING
 
 from faz.bot.wynn.api._wynn_ratelimit_handler import WynnRatelimitHandler
 from faz.bot.wynn.api.endpoint.guild_endpoint import GuildEndpoint
