@@ -3,8 +3,12 @@ from __future__ import annotations
 from datetime import datetime as dt
 from typing import TYPE_CHECKING
 
-from sqlalchemy.dialects.mysql import BINARY, DATETIME, VARCHAR
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.dialects.mysql import BINARY
+from sqlalchemy.dialects.mysql import DATETIME
+from sqlalchemy.dialects.mysql import VARCHAR
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
+from sqlalchemy.orm import relationship
 
 from faz.bot.database.fazwynn.model.base_fazwynn_model import BaseFazwynnModel
 

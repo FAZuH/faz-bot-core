@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
-from typing import TYPE_CHECKING, Sequence
+from typing import Sequence, TYPE_CHECKING
 
 from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import select

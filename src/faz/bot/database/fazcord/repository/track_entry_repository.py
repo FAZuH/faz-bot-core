@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Sequence
+from typing import Any, Sequence, TYPE_CHECKING
 
 from faz.utils.database.base_repository import BaseRepository
 from sqlalchemy import select

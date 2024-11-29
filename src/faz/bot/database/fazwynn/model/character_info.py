@@ -3,8 +3,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from sqlalchemy import ForeignKey
-from sqlalchemy.dialects.mysql import BINARY, ENUM
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.dialects.mysql import BINARY
+from sqlalchemy.dialects.mysql import ENUM
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
+from sqlalchemy.orm import relationship
 
 from faz.bot.database.fazwynn.model.base_fazwynn_model import BaseFazwynnModel
 

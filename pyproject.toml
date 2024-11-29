@@ -37,6 +37,10 @@ Source = "https://github.com/FAZuH/faz-bot-core"
 Issues = "https://github.com/FAZuH/faz-bot-core/issues"
 Documentation = "https://github.com/FAZuH/faz-bot-core#readme"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+include = [ "faz.bot*" ]
+
 [dependency-groups]
 dev = [
     "alembic>=1.14.0",
@@ -45,20 +49,25 @@ dev = [
     "pytest>=8.3.3",
     "ruff>=0.7.4",
 ]
+sandbox = [
+    "ipykernel>=6.29.5",
+    "matplotlib>=3.9.2",
+    "neovim>=0.3.1",
+]
 
 [build-system]
 requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
-
-[tool.setuptools.packages.find]
-where = ["src"]
-include = [ "faz.bot*" ]
 
 [tool.pytest.ini_options]
 addopts = "-ra -q"
 testpaths = [
     "tests",
 ]
+
+[tool.isort]
+profile = "google"
+line_length = 100
 
 [tool.ruff]
 exclude = [

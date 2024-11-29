@@ -1,4 +1,5 @@
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 from typing import Any
 
 from faz.bot.wynn.api.model.field.header_date_field import HeaderDateField

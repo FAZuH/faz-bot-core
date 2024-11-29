@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import TYPE_CHECKING, Any, Sequence
+from typing import Any, Sequence, TYPE_CHECKING
 
-import pandas
 from faz.utils.database.base_repository import BaseRepository
-from sqlalchemy import and_, select
+import pandas
+from sqlalchemy import and_
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import Select
 
@@ -28,11 +29,6 @@ class PlayerHistoryRepository(BaseRepository[PlayerHistory, Any]):
         session: AsyncSession | None = None,
     ) -> Sequence[PlayerHistory]:
         """Selects records for a given player within a specified period.
-
-        This method queries the `PlayerHistory` model for records where the `datetime`
-        field is within the specified period (`period_begin` to `period_end`) and
-        matches the given player's UUID. The results are sorted by the `datetime` field
-        in ascending order.
 
         Args:
             player_uuid (bytes): The UUID of the player as a byte string.
@@ -58,12 +54,7 @@ class PlayerHistoryRepository(BaseRepository[PlayerHistory, Any]):
         period_end: datetime,
     ) -> pandas.DataFrame:
         """Selects records for a given player within a specified period and returns
-        them as a pandas DataFrame.
-
-        This method queries the `PlayerHistory` model for records where the `datetime`
-        field is within the specified period (`period_begin` to `period_end`) and
-        matches the given player's UUID. The results are returned as a DataFrame for
-        easy manipulation and analysis, sorted by `datetime` in ascending order.
+        them as a pandas DataFrame. Sorted by datetime.
 
         Args:
             player_uuid (bytes): The UUID of the player as a byte string.

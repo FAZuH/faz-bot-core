@@ -1,7 +1,7 @@
-import unittest
 from datetime import datetime as dt
 from types import NoneType
 from typing import override
+import unittest
 
 from faz.bot.dev.test.fixtures_api import FixturesApi
 from faz.bot.wynn.api.model.field.body_date_field import BodyDateField

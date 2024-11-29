@@ -1,21 +1,20 @@
 from __future__ import annotations
 
 import asyncio
-from typing import TYPE_CHECKING, Any
+from typing import Any, TYPE_CHECKING
 
-from aiohttp import ClientSession, ClientTimeout
+from aiohttp import ClientSession
+from aiohttp import ClientTimeout
 
 from faz.bot.wynn.api.base_response import BaseResponse
-from faz.bot.wynn.api.errors import (
-    BadRequest,
-    Forbidden,
-    HTTPError,
-    NotFound,
-    Ratelimited,
-    ServerError,
-    TooManyRetries,
-    Unauthorized,
-)
+from faz.bot.wynn.api.errors import BadRequest
+from faz.bot.wynn.api.errors import Forbidden
+from faz.bot.wynn.api.errors import HTTPError
+from faz.bot.wynn.api.errors import NotFound
+from faz.bot.wynn.api.errors import Ratelimited
+from faz.bot.wynn.api.errors import ServerError
+from faz.bot.wynn.api.errors import TooManyRetries
+from faz.bot.wynn.api.errors import Unauthorized
 
 if TYPE_CHECKING:
     from aiohttp import ClientResponse

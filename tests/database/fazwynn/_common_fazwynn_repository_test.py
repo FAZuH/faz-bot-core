@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC
 from datetime import timedelta
-from typing import TYPE_CHECKING, override
+from typing import override, TYPE_CHECKING
 from uuid import UUID
 
 from faz.bot.database.fazwynn.fazwynn_database import FazwynnDatabase

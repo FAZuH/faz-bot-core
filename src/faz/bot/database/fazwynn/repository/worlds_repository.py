@@ -1,9 +1,10 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Iterable, Literal, Sequence
+from typing import Any, Iterable, Literal, Sequence, TYPE_CHECKING
 
 from faz.utils.database.base_repository import BaseRepository
-from sqlalchemy import desc, select
+from sqlalchemy import desc
+from sqlalchemy import select
 
 from faz.bot.database.fazwynn.model.worlds import Worlds
 

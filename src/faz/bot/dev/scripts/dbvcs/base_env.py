@@ -1,9 +1,11 @@
+from abc import ABC
+from abc import abstractmethod
 import os
-from abc import ABC, abstractmethod
 
 from alembic import context
 from alembic.config import Config
-from sqlalchemy import MetaData, engine_from_config
+from sqlalchemy import engine_from_config
+from sqlalchemy import MetaData
 
 
 class BaseEnv(ABC):

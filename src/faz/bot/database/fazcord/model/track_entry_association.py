@@ -2,8 +2,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from sqlalchemy import BINARY, INTEGER, ForeignKey, UniqueConstraint
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import BINARY
+from sqlalchemy import ForeignKey
+from sqlalchemy import INTEGER
+from sqlalchemy import UniqueConstraint
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
+from sqlalchemy.orm import relationship
 
 from faz.bot.database.fazcord.model.base_fazcord_model import BaseFazcordModel
 

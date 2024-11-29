@@ -1,8 +1,10 @@
 from datetime import datetime
 from typing import Any, Optional
 
-from sqlalchemy.dialects.mysql import BIGINT, VARCHAR
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.dialects.mysql import BIGINT
+from sqlalchemy.dialects.mysql import VARCHAR
+from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import mapped_column
 
 from faz.bot.database.fazcord.model.base_fazcord_model import BaseFazcordModel
 
