@@ -25,12 +25,7 @@ class GuildHistoryRepository(BaseRepository[GuildHistory, Any]):
         period_end: datetime,
     ) -> pandas.DataFrame:
         """Selects records for a given guild within a specified period and returns
-        them as a pandas DataFrame.
-
-        This method queries the `GuildHistory` model for records where the `datetime`
-        field is within the specified period (`period_begin` to `period_end`) and
-        matches the given guild's UUID. The results are returned as a DataFrame for
-        easy manipulation and analysis, sorted by `datetime` in ascending order.
+        them as a pandas DataFrame. Sorted by datetime.
 
         Args:
             guild_uuid (bytes): The UUID of the guild.

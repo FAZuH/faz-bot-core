@@ -28,11 +28,6 @@ class CharacterHistoryRepository(BaseRepository[CharacterHistory, Any]):
     ) -> Sequence[CharacterHistory]:
         """Selects records for a given player within a specified period.
 
-        This method queries the `PlayerHistory` model for records where the `datetime`
-        field is within the specified period (`period_begin` to `period_end`) and
-        matches the given player's UUID. The results are sorted by the `datetime` field
-        in ascending order.
-
         Args:
             player_uuid (bytes): The UUID of the player as a byte string.
             period_begin (datetime): The start of the period to filter records.
@@ -57,12 +52,7 @@ class CharacterHistoryRepository(BaseRepository[CharacterHistory, Any]):
         period_end: datetime,
     ) -> pandas.DataFrame:
         """Selects records for a given player within a specified period and returns
-        them as a pandas DataFrame.
-
-        This method queries the `PlayerHistory` model for records where the `datetime`
-        field is within the specified period (`period_begin` to `period_end`) and
-        matches the given player's UUID. The results are returned as a DataFrame for
-        easy manipulation and analysis, sorted by `datetime` in ascending order.
+        them as a pandas DataFrame. Sorted by dataframe.
 
         Args:
             player_uuid (bytes): The UUID of the player as a byte string.
