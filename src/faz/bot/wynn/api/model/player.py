@@ -57,13 +57,14 @@ class Player:
         self._ranking = raw["ranking"]
         """`rankingName: nthRank`"""
         self._public_profile = raw["publicProfile"]
+        chars = raw.get("characters", {})
         self._characters = {
             UuidField(character_uuid): self.Character(character)
-            for character_uuid, character in raw["characters"].items()
+            for character_uuid, character in chars.items()
         }
 
     def get_character_uuids(self) -> list[UuidField]:
-        return list(self.characters.keys())
+        return list(self.characters)
 
     def iter_characters(
         self,
