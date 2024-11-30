@@ -13,7 +13,7 @@ class Properties:
 
     # .env
     DISCORD_BOT_TOKEN: str
-    ADMIN_DISCORD_ID: int
+    DEV_DISCORD_ID: int
     DEV_SERVER_ID: int
     FAZCORD_DISCORD_LOG_WEBHOOK: str
     FAZCORD_DISCORD_STATUS_WEBHOOK: str
@@ -40,7 +40,7 @@ class Properties:
     def _read_env(cls) -> None:
         load_dotenv()
         cls.DISCORD_BOT_TOKEN = cls._must_get_env("DISCORD_BOT_TOKEN")
-        cls.ADMIN_DISCORD_ID = cls._must_get_env("ADMIN_DISCORD_ID", int)
+        cls.DEV_DISCORD_ID = cls._must_get_env("DEV_DISCORD_ID", int)
         cls.DEV_SERVER_ID = cls._must_get_env("DEV_SERVER_ID", int)
         cls.FAZCORD_DISCORD_LOG_WEBHOOK = cls._must_get_env("FAZCORD_DISCORD_LOG_WEBHOOK")
         cls.FAZCORD_DISCORD_STATUS_WEBHOOK = cls._must_get_env("FAZCORD_DISCORD_STATUS_WEBHOOK")
