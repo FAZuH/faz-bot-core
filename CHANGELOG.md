@@ -1,3 +1,12 @@
+## [0.4.1](https://github.com/FAZuH/python-faz-bot-core/compare/v0.4.0...v0.4.1) (2024-11-30)
+
+
+### Bug Fixes
+
+* Fix KeyError when player does not have characters in wynn.api ([41ff455](https://github.com/FAZuH/python-faz-bot-core/commit/41ff4558b932b215fcc809146e46e7a768103065))
+
+
+
 # [0.4.0](https://github.com/FAZuH/python-faz-bot-core/compare/v0.3.0...v0.4.0) (2024-11-29)
 
 
@@ -26,10 +35,6 @@
 ### Features
 
 * Improve dev scripts ([79c2f96](https://github.com/FAZuH/python-faz-bot-core/commit/79c2f9645c187c069125f2dc1dc48485a9d90019))
-
-
-
-## [0.1.5](https://github.com/FAZuH/python-faz-bot-core/compare/v0.1.4...v0.1.5) (2024-11-25)
 
 
 
